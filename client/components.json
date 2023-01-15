@@ -1,0 +1,257 @@
+[
+      {
+        "id":"top",
+        "name": "top",
+        "classes": "test",
+        "type": "fixed",
+        "rows": [
+          {
+            "gridCols": 12,
+            "gridGap": 8,
+            "cols":[
+              {
+                "classes": "mee",
+                "span": 2,
+                "components": [
+                  {
+                    "component": "Logo",
+                    "props": {
+                      "className": "h-32"
+                    }
+                  }
+                ]
+              },
+              {
+                "classes": "",
+                "span": 2,
+                "components": [
+                  {
+                    "component": "Login",
+                    "props": {
+                      "className": ""
+                    }
+                  }
+                ]
+              },
+              {
+                "classes": "",
+                "span": 12,
+                "components": [
+                  {
+                    "component": "Logo",
+                    "props": {
+                      "className": "my-class"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id":"hero",
+        "name": "hero",
+        "classes": "mt-4",
+        "type": "fixed",
+        "rows": [
+          {
+            "gridCols": 1,
+            "gridGap": 8,
+            "cols":[
+              {
+                "classes": "",
+                "components": [
+                  {
+                    "component": "Logo",
+                    "props": {
+                      "className": "my-class"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id":"notice",
+        "name": "notice",
+        "classes": "mt-4",
+        "type": "fixed",
+        "rows": [
+          {
+            "gridCols": 1,
+            "gridGap": 8,
+            "cols":[
+              {
+                "classes": "",
+                "components": [
+                  {
+                    "component": "Logo",
+                    "props": {
+                      "className": "my-class"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id":"history",
+        "name": "history",
+        "classes": "mt-4",
+        "type": "fixed",
+        "rows": [
+          {
+            "gridCols": 1,
+            "gridGap": 8,
+            "cols":[
+              {
+                "classes": "",
+                "components": [
+                  {
+                    "component": "Logo",
+                    "props": {
+                      "className": "my-class"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id":"spotlight",
+        "name": "spotlight",
+        "classes": "mt-4",
+        "type": "fixed",
+        "rows": [
+          {
+            "gridCols": 2,
+            "gridGap": 8,
+            "cols":[
+              {
+                "components": [
+                  {
+                    "component": "Logo",
+                    "props": {
+                      "className": "my-class"
+                    }
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "component": "Logo",
+                    "props": {
+                      "className": "my-class"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id":"statistics",
+        "name": "statistics",
+        "classes": "mt-4",
+        "type": "fixed",
+        "rows": [
+          {
+            "gridCols": 1,
+            "gridGap": 8,
+            "cols":[
+              {
+                "components": [
+                  {
+                    "component": "Logo",
+                    "props": {
+                      "className": "my-class"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id":"speech",
+        "name": "speech",
+        "classes": "mt-4",
+        "type": "fixed",
+        "rows": [
+          {
+            "gridCols": 1,
+            "gridGap": 8,
+            "cols":[
+              {
+                "components": [
+                  {
+                    "component": "Logo",
+                    "props": {
+                      "className": "my-class"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id":"gallery",
+        "name": "gallery",
+        "classes": "mt-4",
+        "type": "fixed",
+        "rows": [
+          {
+            "gridCols": 1,
+            "gridGap": 8,
+            "cols":[
+              {
+                "components": [
+                  {
+                    "component": "Logo",
+                    "props": {
+                      "className": "my-class"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id":"footer",
+        "name": "footer",
+        "classes": "mt-4",
+        "type": "fixed",
+        "rows": [
+          {
+            "gridCols": 1,
+            "gridGap": 8,
+            "cols":[
+              {
+                "components": [
+                  {
+                    "component": "Logo",
+                    "props": {
+                      "className": "my-class"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]

@@ -1,0 +1,95 @@
+// Variables
+$gutter: 30px;
+$section-padding: $gutter*3;
+
+// Color
+$white: #ffffff;
+$dal-white: #cccccc;
+$gray: #606060;
+$orange-red: #E94822;
+$purple-red: #C339CE;
+
+$ex-sub-heading: $gray;
+
+
+// Mixins & Functions
+@mixin gradiant-bg($primary, $secondary) {
+    background-image: linear-gradient(90deg, $primary, $secondary);
+}
+
+// Typography
+p{
+    color: $ex-sub-heading;
+}
+
+// 
+
+#ex-section-top svg{
+    width: 20px;
+    display: inline;
+    margin-right: 10px;
+}
+
+// Sections
+.ex-section{
+    padding-top: $section-padding;
+    padding-bottom: 120px;
+    &.no-padding{
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+}
+// Ex-Helper
+.ex-jumbotron{
+    padding: $section-padding 0;
+}
+.ex-bg-gray{
+    background-color: $gray;
+}
+.ex-bg-primary-gradiant{
+    @include gradiant-bg($orange-red, $purple-red )
+}
+
+// Ex-typography
+.ex-text-white{
+    color: $white;
+}
+.ex-text-dal-white{
+    color: $dal-white;
+}
+
+.ex-sub-heading, .ex-element-sub-title{
+    color: $ex-sub-heading;
+    font-weight: 100;
+}
+
+// Modules
+.ex-cta{
+    .ex-sub-heading{
+        color: $white;
+    }
+}
+
+// Bootstrap override
+.btn-primary{
+    // background-image: linear-gradient(to right, $orange-red, $purple-red);
+    background: #FF605A;
+    border: 2px solid;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    &:hover{
+        background: #E94822;
+        border-color: #ffffff;
+        box-shadow: 0 0 2px rgba(0,0,0,0.3);
+    }
+}
+
+/* Page spesific */
+.eie-gallery > div{
+    display: grid;
+    grid-template-columns: 260px 260px 260px 260px;
+    grid-column-gap: 20px;
+    img{
+        width: 100%;
+    }
+}
