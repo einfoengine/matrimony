@@ -9,7 +9,9 @@ import Row from '../Elements/Row'
 import Col from '../Elements/Column'
 import MainNav from '../components/MainNav'
 import Login from '../components/Login'
-
+import Logo from "../Elements/Logo";
+import Paragraph from "../Elements/Paragraph";
+import ModuleTitle from "../Elements/ModuleTitle";
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../styles/globals.css'
@@ -37,6 +39,23 @@ function MyApp({ Component, pageProps }: AppProps) {
         <LoginProvider>
           <Section id='ex-top' className='ex-top no-padding' container='fixed'>
             <Row id='ex-row-top' className='align-items-center'>
+              <Col className="col-2">
+                <span>
+                  +8801714028277
+                </span>
+              </Col>
+              <Col className="col-6">
+                <span>
+                  House 36, Road 14/A, Dhanmondi Dhaka.
+                </span>
+              </Col>
+              <Col className="col-4">
+                <span>
+                  Find us on: 
+                </span>
+              </Col>
+            </Row>
+            <Row id='ex-row-top' className='align-items-center'>
               <Col className='col-2'>
                 <h1>Pakhi Bhai</h1>
               </Col>
@@ -52,6 +71,40 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
 
         </LoginProvider>
+        <Section id='ex-sec-footer' className='ex-section ex-sec-footer' container='fixed'>
+        <Row id='ex-row-footer-1' className='ex-row-footer-1 ex-row'>
+          <Col className='col-3'>
+            <Logo text='Pakhi Bhai'/>
+            <Paragraph>
+              Welcome to pakhi bhai, your most trustworthy plaform to find your perfect match.
+            </Paragraph>
+          </Col>
+          <Col className='col-3'>
+            <ModuleTitle>Contact Us</ModuleTitle>
+            <ul>
+              <li>Dhaka, Bangladesh</li>
+              <li>+88 01714028277</li>
+              <li>info@pakhibhai.com</li>
+            </ul>
+          </Col>
+          <Col className='col-3'>
+            <ModuleTitle>Links</ModuleTitle>
+            <ul>
+              <li>How it works</li>
+              <li>Get to know us</li>
+              <li>Reead our blogs</li>
+            </ul>
+          </Col>
+          <Col className='col-3'>
+            <ModuleTitle>Stay connected</ModuleTitle>
+            <ul>
+              <li>FaceBook</li>
+              <li>Youtube</li>
+              <li>Newsletter</li>
+            </ul>
+          </Col>
+        </Row>
+      </Section>
       </div>
     </>
   )

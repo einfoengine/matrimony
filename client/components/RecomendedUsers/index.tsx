@@ -40,7 +40,7 @@ const RecomendedUsers = ({users, showLike, showMessage, showBio}:{user:any, user
 
 
   return (
-    <div className='d-flex'>
+    <div className='theme-grid-3'>
     {
       users.map((e:any)=>{
         return <div className='ex-component border rounded' key={'user_id_'+e._id}>

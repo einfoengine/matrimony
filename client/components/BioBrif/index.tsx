@@ -47,29 +47,29 @@ const BioBrief = ({user}:{user:object}) => {
 
   if(userDetails){
     return (
-      <div className='ex-component border rounded'>
-          <figure className="p-3">
-              <img src={`http://localhost:8000/static/images/${profilePic}`} layout='responsive' width={50} height={50}/>
-              <h4 className='d-inline-block'>{userDetails?.name}</h4>
-              <Link href={`/users/gallery/${userDetails?._id}`}><button type='button' className='btn btn-info'>See pictures</button></Link>
-              <div>User ID - {userDetails?._id}</div>
-              <hr />
-              <div className="">
-                  <div>Email - {userDetails?.user_name}</div>
-                  <div>Age - {year - Number(userDetails?.dob)}</div>
-                  <div>City - {userDetails?.city}</div> 
-                  <div>Religion - {userDetails?.religion}</div>
-              </div>
-            </figure>
+      <div className='ex-component border rounded sam-bio-brif'>
+        <figure className="p-3">
+          <img src={`http://localhost:8000/static/images/${profilePic}`} layout='responsive' width={50} height={50}/>
+          <h4 className='d-inline-block'>{userDetails?.name}</h4>
+          <Link href={`/users/gallery/${userDetails?._id}`}><button type='button' className='btn btn-info'>See pictures</button></Link>
+          <div>User ID - {userDetails?._id}</div>
+          <hr />
+          <div className="">
+              <div>Email - {userDetails?.user_name}</div>
+              <div>Age - {year - Number(userDetails?.dob)}</div>
+              <div>City - {userDetails?.city}</div> 
+              <div>Religion - {userDetails?.religion}</div>
+          </div>
           <div>
-          <h6 className="mt-4">Upload profile picture</h6>
-          <form onSubmit={handleSubmit}>
-            <div className="custom-file input-group">
-              <input type="file" name="" id="profilePicInput" className="file-pro-pic custom-file-input form-control" onChange={handleFileSelect}/>
-              <button type="submit" className="input-group-text btn-primary">Submit</button>
-            </div>
-          </form>
-        </div>
+            <h6 className="mt-4">Upload profile picture</h6>
+            <form onSubmit={handleSubmit}>
+              <div className="custom-file input-group">
+                <input type="file" name="" id="profilePicInput" className="file-pro-pic custom-file-input form-control" onChange={handleFileSelect}/>
+                <button type="submit" className="input-group-text btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </figure>
       </div>
     )
   }

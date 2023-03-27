@@ -11,6 +11,7 @@ import Features from '../components/Features'
 import CallToAction from '../components/CallToAction'
 import Videos from '../components/Videos'
 import { LoginContext } from '../context';
+import RecentUsers from '../components/RecentUsers';
 
 
 
@@ -29,12 +30,12 @@ const payload:layoutPayload = [
             <Hero 
               className='ex-hero'
               childWrapClass='ex-jumbotron text-center' 
-              title='We help to find your better half' 
-              subTitle='Demo sub title'
-              text='Demo text'
+              title='We help in match making' 
+              subTitle="It    's easy to find and connect with your better half"
+              text='If you need you may get help of our experienced councilor'
               link='#'
               colorOverly='rgba(0,0,0,0.5)'
-              backgroundImage='hero-1.jpg'
+              backgroundImage='bg.jpg'
             /></>
           },
         ]
@@ -51,7 +52,7 @@ const payload:layoutPayload = [
         cols:[
           {
             className: '',
-            components: <AdvanceSearch className='rounded p-3 mt-4 ex-bg-gray ex-text-white'/>
+            components: <AdvanceSearch className='eie-advanced-search rounded p-3 mt-4'/>
           },
         ]
       },
@@ -92,21 +93,6 @@ const payload:layoutPayload = [
               action='#'
               btnText='Make an account'
             />
-          }
-        ]
-      },
-    ],
-  },
-  {
-    id:'ex-cta-2',
-    name: "cta",
-    className: "mt-4",
-    type: 'fixed',
-    rows: [
-      {
-        cols:[
-          {
-            components: <Videos/>
           }
         ]
       },

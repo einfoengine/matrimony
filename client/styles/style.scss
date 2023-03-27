@@ -1,7 +1,6 @@
 // Variables
 $gutter: 30px;
 $section-padding: $gutter*3;
-
 // Color
 $white: #ffffff;
 $dal-white: #cccccc;
@@ -9,36 +8,31 @@ $gray: #606060;
 $orange-red: #E94822;
 $purple-red: #C339CE;
 
-$ex-sub-heading: $gray;
+$ex-sub-heading: $dal-white;
 
+// Theme colors
+$theme-primary: #3a1965;
+$theme-secondary: #df314d;
+
+$theme-text: $white;
 
 // Mixins & Functions
 @mixin gradiant-bg($primary, $secondary) {
     background-image: linear-gradient(90deg, $primary, $secondary);
 }
-
-// Typography
-p{
-    color: $ex-sub-heading;
+h2{
+    margin-bottom: 60px;
 }
-
-// 
-
-#ex-section-top svg{
-    width: 20px;
-    display: inline;
-    margin-right: 10px;
-}
-
-// Sections
-.ex-section{
-    padding-top: $section-padding;
-    padding-bottom: 120px;
-    &.no-padding{
-        padding-top: 0px;
-        padding-bottom: 0px;
+a{
+    &:hover{
+        color: $theme-secondary !important;
     }
 }
+
+*{
+    transition: all 0.3s;
+}
+
 // Ex-Helper
 .ex-jumbotron{
     padding: $section-padding 0;
@@ -49,7 +43,107 @@ p{
 .ex-bg-primary-gradiant{
     @include gradiant-bg($orange-red, $purple-red )
 }
+.theme-grid{
+    display: grid;
+    grid-template-columns: auto auto auto auto 130px;
+    gap: 20px;
+}
+.theme-grid-3{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+}
+.theme-grid-4{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+}
 
+// Elements/module
+.ex-cta{
+    .ex-sub-heading{
+        color: $white;
+    }
+}
+.sam-bio-brif{
+    img{
+        margin-right: 10px;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 20px;
+        border-radius: 6px;
+    }
+    h4{
+        text-transform: uppercase;
+        + button{
+            float: right;
+            padding: 4px 8px;
+            font-size: 11px;
+        }
+    }
+}
+
+
+// Sections
+.ex-section{
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+    &.no-padding{
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+}
+#ex-section-top svg{
+    width: 20px;
+    display: inline;
+    margin-right: 10px;
+}
+.ex-top{
+    background: rgba($theme-primary, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid rgba($white, 0.1);
+    .ex-row{
+        padding: 15px 0;
+        &:first-child{
+            border-bottom: 1px solid rgba($white, 0.1);
+        }
+    }
+}
+#ex-section-hero{
+    div.ex-col{
+        padding: 0;
+    }
+    .ex-jumbotron{
+        padding: 300px 0;
+    }
+}
+// Hero
+h3.ex-jumbotron-title.ex-text-white{
+    font-size: 40px;
+    text-transform: uppercase;
+}
+h4.ex-jumbotron-sub-title.ex-text-dal-white{
+    color: $theme-secondary;
+}
+// eie-advanced-search
+.eie-advanced-search{
+    background: $white;
+    color: $theme-primary;
+    margin-top: -160px !important;
+}
+// #ex-section-advance-search{
+
+// }
+// Footer
+.ex-sec-footer{
+    background: $theme-secondary;
+    bottom: 0;
+    // position: absolute;
+    width: 100%;
+}
 // Ex-typography
 .ex-text-white{
     color: $white;
@@ -59,32 +153,49 @@ p{
 }
 
 .ex-sub-heading, .ex-element-sub-title{
-    color: $ex-sub-heading;
-    font-weight: 100;
+    color: $theme-secondary;
+    // font-weight: 100;
 }
 
-// Modules
-.ex-cta{
-    .ex-sub-heading{
-        color: $white;
-    }
-}
 
 // Bootstrap override
+.btn{
+    text-transform: uppercase;
+    padding: 13px 28px;
+    &:hover{
+        background-color: $white;
+        color: $theme-secondary;
+    }
+}
 .btn-primary{
     // background-image: linear-gradient(to right, $orange-red, $purple-red);
     background: #FF605A;
-    border: 2px solid;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border: 0 none;
+    border-radius: 0px;
+    // box-shadow: 0 0 10px rgba(0,0,0,0.3);
     &:hover{
-        background: #E94822;
+        // background: #E94822;
         border-color: #ffffff;
         box-shadow: 0 0 2px rgba(0,0,0,0.3);
     }
 }
-
+.modal-header{
+    color: $theme-primary;
+}
+.form-label{
+    color: $theme-secondary;
+}
+.form-control{
+    border-radius: 0%;
+}
+.form-select{
+    border-radius: 0 !important;
+    height: 50px;
+}
 /* Page spesific */
+.vd-top-space{
+    padding-top: 200px;
+}
 .eie-gallery > div{
     display: grid;
     grid-template-columns: 260px 260px 260px 260px;
@@ -93,3 +204,11 @@ p{
         width: 100%;
     }
 }
+
+// Home 
+body{
+    background: $theme-primary;
+    color: $theme-text;
+}
+
+// Biodata, registration

@@ -14,17 +14,17 @@ const AdvanceSearch = ({className}:{className?:string | null}) => {
     },[params]);
   return (
       <>
-        <SubHeading 
+        {/* <SubHeading 
             className="text-center" 
             text="Start your new life from here"
-        />
-        <Heading 
+        /> */}
+        {/* <Heading 
             title="Find your suitable match"
             className="text-center"
-        />
+        /> */}
         <div className={`ex-component ex-advance-search ${className}`}>
-            <form className="d-flex justify-content-around">
-                <div className="">
+            <form className="theme-grid">
+                <div className="grid-item">
                     <label htmlFor="">Looking for</label>
                     <select id="inputLookingFor" className="form-select" onChange={(e)=>{setParams({...params, gender: e.target.value})}}>
                         <option value="">Select</option>
@@ -32,7 +32,7 @@ const AdvanceSearch = ({className}:{className?:string | null}) => {
                         <option value="male">Groom</option>
                     </select>
                 </div>
-                <div className="">
+                <div className="grid-item">
                     <label htmlFor="">Age range</label>
                     {/* <input type="number" className="form-control" placeholder="min age" onChange={(e)=>{
                         const targetYear = year - e.target.value;
@@ -112,7 +112,7 @@ const AdvanceSearch = ({className}:{className?:string | null}) => {
                         <option value={28}>28</option>
                     </select>
                 </div>
-                <div className="">
+                <div className="grid-item">
                     <label htmlFor="">Religion</label>
                     <select id="inputRegistration" className="form-select" onChange={(e)=>{setParams({...params, religion: e.target.value})}}>
                         <option>Select</option>
@@ -123,7 +123,7 @@ const AdvanceSearch = ({className}:{className?:string | null}) => {
                         <option value="others">Others</option>
                     </select>
                 </div>
-                <div className="">
+                <div className="grid-item">
                     <label htmlFor="">Division</label>
                     <select className="form-select" aria-label="Your preferred division" onChange={(e)=>{setParams({...params, division: e.target.value})}}>
                         <option>Select</option>
@@ -138,7 +138,7 @@ const AdvanceSearch = ({className}:{className?:string | null}) => {
                         <option value="komilla">Komilla</option>
                     </select>
                 </div>
-                <div className="">
+                <div className="grid-item">
                     <Link href={{
                         pathname: `/search/`,
                         query: params

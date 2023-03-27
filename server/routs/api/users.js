@@ -6,7 +6,7 @@ import User from "../../models/User.js";
 
 // Conntrollers
 import {Register, Login, Logout} from '../../controllers/auth.js';
-import {GetUsers, GetUser, SetLike, GetLiked, RemoveUser, Uploadavatar, UploadImages, GetUserGallery, SetVerify} from '../../controllers/users.js';
+import {GetUsers, GetUser, SetLike, GetLiked, RemoveUser, Uploadavatar, UploadImages, GetUserGallery, SetVerify, GetRecentUsers} from '../../controllers/users.js';
 import { nextTick } from "process";
 
 // app.use(express.static('upload'));
@@ -100,7 +100,7 @@ router.get('/logout', Logout);
 // Get users
 router.get('/user/:id', GetUser);
 router.get('/', GetUsers);
-
+router.get('/recent', GetRecentUsers);
 router.get('/liked', GetLiked);
 router.get('/gallery', GetUserGallery);
 

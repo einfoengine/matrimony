@@ -32,7 +32,7 @@ const CreateBiodata = ({bio, userId}:{bio: object | null, userId: any}) => {
   return (
     <div className="ex-component ex-registration d-block">  
         <form onSubmit={handleSubmit}>
-            <div className="row border rounded mb-3 pt-2 pb-2 mt-0">
+            <div className="border rounded p-3 mb-3 pt-2 pb-2 mt-0">
                 <h4>Parmanent Address</h4>
                 <div className="col-12">
                     <label htmlFor="inputAddress" className="form-label">Present Address</label>
@@ -43,19 +43,19 @@ const CreateBiodata = ({bio, userId}:{bio: object | null, userId: any}) => {
                     <input type="text" className="form-control" id="inputAddress2" name="inputAddress2" placeholder="Apartment, studio, or floor" defaultValue={bio?.parmenent_address} onChange={e=>setPermanentAddress(e.target.value)}/>
                 </div>
             </div>
-            <div className="row border rounded mb-3 pt-2 pb-2 mt-0">
+            <div className="border rounded p-3 mb-3 pt-2 pb-2 mt-0">
                 <h4>Educational qualification</h4>
                 <div className="form-floating">
                     <textarea name="" id="" cols="30" rows="10" className="form-control" onChange={(e)=>{setEducation(e.target.value)}} defaultValue={bio?.educaton}></textarea>
                 </div>
             </div>
-            <div className="row border rounded mb-3 pt-2 pb-2 mt-0">
+            <div className="border rounded p-3 mb-3 pt-2 pb-2 mt-0">
                 <h4>Professional Information</h4>    
                     <div className="form-floating">
                         <textarea name="" id="" cols="30" rows="10" className="form-control" onChange={e=>setProfssion(e.target.value)} defaultValue={bio?.profession}></textarea>
                     </div>
             </div>
-            <div className="row border rounded mb-3 pt-2 pb-2 mt-0">
+            <div className="border rounded p-3 mb-3 pt-2 pb-2 mt-0">
                 <h4>Family information</h4>
                 <div className="col-7">
                     <label className="form-label">Fathers Name</label>
@@ -110,14 +110,14 @@ const CreateBiodata = ({bio, userId}:{bio: object | null, userId: any}) => {
                     <textarea id="relative" className="form-control" name="relative" defaultValue={bio?.relative} onChange={e=>setRelative(e.target.value)}></textarea>
                 </div>
             </div>
-            <div className="row border rounded mb-3 pt-2 pb-2 mt-0">
+            <div className="border rounded p-3 mb-3 pt-2 pb-2 mt-0">
                 <h4>What type of partner are you looking for?</h4>
                 <div className="form-floating">
                     <textarea id="bio-looking-for-type" name="bio-looking-for-type" className="form-control" placeholder="Leave a comment here" defaultValue={bio?.seeking} onChange={e=>setLookingForDetails(e.target.value)}></textarea>
                     <label htmlFor="floatingTextarea2">Comments</label>
                 </div>
             </div>
-            <div className="row border rounded mb-3 pt-2 pb-2 mt-0">
+            <div className="border rounded p-3 mb-3 pt-2 pb-2 mt-0">
                 <h4>Write about yourself</h4>
                 <div className="form-floating">
                     <textarea id="bio-yourself" name="bio-yourself" className="form-control" placeholder="Leave a comment here" defaultValue={bio?.about} onChange={e=>setAboutSelf(e.target.value)}></textarea>

@@ -27,7 +27,7 @@ const ProfileBrief = ({user}:{user:object}) => {
 
   if(userDetails){
     return (
-      <div className='ex-component border rounded'>
+      <div className='ex-component border rounded sam-bio-brif'>
           <figure className="p-3">
               <Link href={`/users/gallery/${userDetails?._id}`}><img src={`http://localhost:8000/static/images/${profilePic}`} layout='responsive' width={50} height={50}/></Link>
               <h4 className='d-inline-block'>{userDetails?.name}</h4>

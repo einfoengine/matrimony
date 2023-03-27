@@ -4,6 +4,10 @@ import { useContext, useEffect, useState } from 'react';
 import { LoginContext } from '../../context';
 import RecomendedUsers from '../../components/RecomendedUsers';
 
+import Default from '../../Layouts/Default.layout';
+
+
+
 
 const Users = () => {
   const {state} = useContext(LoginContext);
@@ -16,12 +20,31 @@ const Users = () => {
   },[state]);
   
   if(users){
+    const payload:layoutPayload = [
+      {
+        id:'hero',
+        name: "hero",
+        className: "no-padding",
+        type: 'fluid',
+        rows: [
+          {
+            cols:[
+              {
+                components: <>
+                  <h4>Recomended for you</h4>
+                  <RecomendedUsers users={users} showLike={true}/>
+                  <h4>All users</h4>
+                  <RenderUsers users={users} showLike={true}/>
+                </>
+              },
+            ]
+          },
+        ],
+      }
+    ]
     return (
-      <div className='container'>  
-        <h4>Recomended for you</h4>
-        <RecomendedUsers users={users} showLike={true}/>
-        <h4>All users</h4>
-        <RenderUsers users={users} showLike={true}/>
+      <div className='container vd-top-space'>  
+        <Default layoutPayload={payload}/>
       </div>
     )
   }

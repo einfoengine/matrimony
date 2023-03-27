@@ -32,6 +32,30 @@ export const GetUsers = async (req, res)=>{
         }
     }
 }
+export const GetRecentUsers = async (req, res)=>{
+    // console.log(req.cookies.token);
+    // if (req.cookies.token) {
+    //     const credential = jwtDecode(req.cookies.token);
+    //     try {
+    //         const self = await User.findById(credential._id);
+    //         console.log(self);
+    //         const users = await User.find({$and:[{_id: {$ne: credential._id}},{gender: {$ne: self.gender}}]});
+    //         res.json(users);
+    //     } catch (err) {
+    //         console.log(err);
+    //         res.send(err)
+    //     }
+    // } else {
+    //     try {
+    //         const users = await User.find();
+    //         res.json(users);    
+    //     } catch (err) {
+    //         console.log(err);
+    //         res.send(err)
+    //     }
+    // }
+    res.send("Hello recent!");
+}
 
 
 // GetUser

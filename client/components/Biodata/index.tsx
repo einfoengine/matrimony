@@ -1,7 +1,7 @@
 const Biodata = ({bio}:{bio: object | null, userId: any}) => {    
   return (
     <div className="ex-component ex-registration d-block">  
-        <div className="row border rounded mb-3 pt-2 pb-2 mt-0">
+        <div className="border rounded p-3 mb-3 pt-2 pb-2 mt-0">
             <h4>Address:</h4>
             <div className="col-12">
                 <h6 className="mb-1 d-block">Present Address</h6>
@@ -12,15 +12,15 @@ const Biodata = ({bio}:{bio: object | null, userId: any}) => {
                 <span>{bio?.parmenent_address}</span>
             </div>
         </div>
-        <div className="row border rounded mb-3 pt-2 pb-2 mt-0">
+        <div className="border rounded p-3 mb-3 pt-2 pb-2 mt-0">
             <h4>Educational qualification</h4>
             <span>{bio?.educaton}</span>
         </div>
-        <div className="row border rounded mb-3 pt-2 pb-2 mt-0">
+        <div className="border rounded p-3 mb-3 pt-2 pb-2 mt-0">
             <h4>Professional Information</h4>  
             <span>{bio?.profession}</span>  
         </div>
-        <div className="row border rounded mb-3 pt-2 pb-2 mt-0">
+        <div className="border rounded p-3 mb-3 pt-2 pb-2 mt-0">
             <h4>Family information</h4>
             <div className="col-7">
                 <h6 className="form-label">Fathers Name</h6>
@@ -52,11 +52,11 @@ const Biodata = ({bio}:{bio: object | null, userId: any}) => {
                 <span>{bio?.relative}</span>
             </div>
         </div>
-        <div className="row border rounded mb-3 pt-2 pb-2 mt-0">
+        <div className="border rounded p-3 mb-3 pt-2 pb-2 mt-0">
             <h4>What type of partner are you looking for?</h4>
             <span>{bio?.seeking}</span>
         </div>
-        <div className="row border rounded mb-3 pt-2 pb-2 mt-0">
+        <div className="border rounded p-3 mb-3 pt-2 pb-2 mt-0">
             <h4>Write about yourself</h4>
             <span>{bio?.about}</span>
         </div>

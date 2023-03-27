@@ -23,9 +23,9 @@ const Biodata = ({data, userId}:{data: object, userId: object}) => {
   const userContext = useContext(LoginContext);
   const payload:layoutPayload = [
     {
-      id:"ex-registration",
-      name: "ex-registration",
-      className: "",
+      id:"ex-registratio",
+      name: "ex-registratio",
+      className: "no-padding",
       type: "fixed",
       rows: [
           {
@@ -51,7 +51,7 @@ const Biodata = ({data, userId}:{data: object, userId: object}) => {
  
   
   return (
-    <div className="ex-page ex-page-registration">
+    <div className="ex-page vd-top-space">
       <Default layoutPayload = {payload}/>
     </div>
   )
