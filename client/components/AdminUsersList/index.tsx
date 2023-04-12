@@ -19,7 +19,7 @@ const AdminUsersList = ({users, handleLike, showLike, showMessage}:{users:any, h
     <div className='container d-flex'>
     {
       users.map((e:any)=>{
-        return <div className='ex-component border rounded' key={'user_id_'+e._id}>
+        return <div className='sam-component border rounded' key={'user_id_'+e._id}>
           <figure className="p-3">
             <Image src="/images/profiles/user-1.jpg" layout='responsive' width={50} height={50}/>
               <Link href={`http://localhost:3000/users/${e._id}`} passHref >

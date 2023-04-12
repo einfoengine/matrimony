@@ -9,8 +9,8 @@ const Features = ({
     className?:string
 }) => {
   return (
-    <div className={`ex-component ex-features text-center ${className}`}>
-        {title!=='undefined'&&<h2 className='ex-component-title'>{title}</h2>}
+    <div className={`sam-component ex-features text-center ${className}`}>
+        {title!=='undefined'&&<h2 className='sam-component-title'>{title}</h2>}
         <div className="row">
             <div className="col col-4 ex-feature">
                 <ImageBox 

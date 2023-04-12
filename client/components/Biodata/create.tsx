@@ -30,7 +30,7 @@ const CreateBiodata = ({bio, userId}:{bio: object | null, userId: any}) => {
         }
     }
   return (
-    <div className="ex-component ex-registration d-block">  
+    <div className="sam-component ex-registration d-block">  
         <form onSubmit={handleSubmit}>
             <div className="border rounded p-3 mb-3 pt-2 pb-2 mt-0">
                 <h4>Parmanent Address</h4>

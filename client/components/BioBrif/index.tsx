@@ -47,7 +47,7 @@ const BioBrief = ({user}:{user:object}) => {
 
   if(userDetails){
     return (
-      <div className='ex-component border rounded sam-bio-brif'>
+      <div className='sam-component border rounded sam-bio-brif'>
         <figure className="p-3">
           <img src={`http://localhost:8000/static/images/${profilePic}`} layout='responsive' width={50} height={50}/>
           <h4 className='d-inline-block'>{userDetails?.name}</h4>

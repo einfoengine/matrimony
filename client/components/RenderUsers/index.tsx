@@ -43,7 +43,7 @@ const RenderUsers = ({users, showLike, showMessage, showBio}:{user:any, users:an
     <div className='theme-grid-3'>
     {
       users.map((e:any)=>{
-        return <div className='ex-component border rounded' key={'user_id_'+e._id}>
+        return <div className='sam-component border rounded' key={'user_id_'+e._id}>
           <figure className="p-3">
             {e.avatar
               &&

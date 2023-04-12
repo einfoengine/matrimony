@@ -13,7 +13,7 @@ const CallToAction = ({
     btnText: string
   }) => {
   return (
-    <div className={`ex-cta rounded ex-component ex-call-to-action ${className}`}>
+    <div className={`ex-cta rounded sam-component ex-call-to-action ${className}`}>
       {title&&<Heading title={title} />}
       <h2 className='ex-big-text'>{bigText}</h2>
       {subTitle&&<SubHeading text={subTitle}/>}
