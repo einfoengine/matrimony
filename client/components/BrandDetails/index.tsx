@@ -2,6 +2,7 @@ import React from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faLocationPin, faPhone, faEnvelope} from '@fortawesome/free-solid-svg-icons'
+import Link from 'next/link'
 // import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 
@@ -18,7 +19,7 @@ const BrandDetails = ({brandName, brandAddress, brandContact, brandEmail}:{
   return (
       <>
         <ul>
-          <li><h1 className='text-2xl text-center mb-4'>{brandName}</h1></li>
+          {/* <Link href={'/'}><li><a><h1 className='text-2xl text-center mb-4'>{brandName}</h1></a></li></Link> */}
           <li className='text-center'>
             <span className='mr-4'><FontAwesomeIcon icon={faLocationPin} />{brandAddress}</span>
             <span className='mr-4'><FontAwesomeIcon icon={faPhone} />{brandContact}</span>
