@@ -43,9 +43,11 @@ const Users = () => {
       }
     ]
     return (
-      <div className='container vd-top-space'>  
-        <Default layoutPayload={payload}/>
-      </div>
+      <section id="sam-users" className="sam-users sam-section">
+        <div className='container'>  
+          <Default layoutPayload={payload}/>
+        </div>
+      </section>
     )
   }
 }

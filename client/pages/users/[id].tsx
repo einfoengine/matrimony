@@ -46,9 +46,7 @@ const User = ({data}) => {
   ]
 
   return (
-    <div className="container vd-top-space">      
-      <Default layoutPayload={payload}/>
-    </div>
+    <Default layoutPayload={payload}/>
   )
 }
 
