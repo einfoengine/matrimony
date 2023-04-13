@@ -20,6 +20,7 @@ const Users = () => {
   },[state]);
   
   if(users){
+    console.log("users:", users);
     const payload:layoutPayload = [
       {
         id:'hero',

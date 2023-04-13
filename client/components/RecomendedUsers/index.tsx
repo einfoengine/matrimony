@@ -14,12 +14,7 @@ const RecomendedUsers = ({users, showLike, showMessage, showBio}:{user:any, user
   useEffect(()=>{
     const token = jwt_decode(JSON.parse(window.localStorage.getItem("user")).token)
     setStatus(token);
-    console.log("Local", token);
   },[]);
-  
-  useEffect(()=>{
-
-  },[slide]);
 
   const handleLike = async (e:any) => {
     try {
@@ -43,6 +38,7 @@ const RecomendedUsers = ({users, showLike, showMessage, showBio}:{user:any, user
     <div className='theme-grid-3'>
     {
       users.map((e:any)=>{
+        // get the liked items in an array and cross match the user. If the user exist in the liked items then no like button but send message button cuold be there. 
         return <div className='sam-component border rounded' key={'user_id_'+e._id}>
           <figure className="p-3">
             {e.avatar&&
