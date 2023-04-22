@@ -1,15 +1,15 @@
 import { useContext, useEffect } from 'react';
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Default from '../Layouts/Default.layout'
+import Default from '../Layouts/Default.layout';
 
-import type { layoutPayload } from '../types/global.type'
-import Hero from '../components/Hero/Index'
-import AdvanceSearch from '../components/AdvanceSearch'
-import Features from '../components/Features'
-import CallToAction from '../components/CallToAction'
-import Videos from '../components/Videos'
+import type { layoutPayload } from '../types/global.type';
+import Hero from '../components/Hero/Index';
+import AdvanceSearch from '../components/AdvanceSearch';
+import Features from '../components/Features';
+import CallToAction from '../components/CallToAction';
+import Videos from '../components/Videos';
 import { LoginContext } from '../context';
 import RecentUsers from '../components/RecentUsers';
 
@@ -85,14 +85,16 @@ const payload:layoutPayload = [
       {
         cols:[
           {
-            components: <CallToAction
-              className="text-center ex-bg-primary-gradiant ex-text-white p-4"
-              title='Connect your perfect match'
-              bigText='1700'
-              subTitle='brids around you'
-              action='#'
-              btnText='Make an account'
-            />
+            components: <>
+              <CallToAction
+                className="text-center ex-bg-primary-gradiant ex-text-white p-4"
+                title='Connect your perfect match'
+                bigText='1700'
+                subTitle='brids around you'
+                action='#'
+                btnText='Make an account'
+              />
+            </>
           }
         ]
       },

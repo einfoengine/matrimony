@@ -1,7 +1,9 @@
 import { useContext, useEffect } from "react";
-import axios from 'axios';
 import { LoginContext, LoginProvider } from "../context";
 import Head from "next/head";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faFacebook} from '@fortawesome/free-brands-svg-icons';
 
 
 import Section from '../Elements/Section'
@@ -53,6 +55,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               <Col className="col-4">
                 <span>
                   Find us on: 
+                  <FontAwesomeIcon className="sam-top-social-icon" icon={faFacebook} />
                 </span>
               </Col>
             </Row>
