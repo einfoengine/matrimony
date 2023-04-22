@@ -53,7 +53,7 @@ const upload = multer({
     },
     fileFilter: (req, file, cb)=>{
         try{
-            if(file.mimetype === ('image/png'||'image/jpg'||'image/jpeg')){
+            if(file.mimetype === 'image/png'|| file.mimetype === 'image/jpg' || file.mimetype === 'image/jpeg'){
                 cb(null, true);
             }else{
                 console.log(file)
@@ -72,7 +72,7 @@ const UploadGallery = multer({
     },
     fileFilter: (req, file, cb)=>{
         try{
-            if(file.mimetype === ('image/png'||'image/jpg'||'image/jpeg')){
+            if(file.mimetype == ('image/png'||'image/jpg'||'image/jpeg')){
                 cb(null, true);
             }else{
                 console.log(file)
