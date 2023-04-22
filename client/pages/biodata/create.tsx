@@ -1,7 +1,8 @@
 import type { layoutPayload } from "../../types/global.type"
 import BiodataForm from "../../components/Biodata/create"
 import Default from "../../Layouts/Default.layout"
-import ProfileBrief from "../../components/ProfileBrief"
+// import ProfileBrief from "../../components/ProfileBrief"
+import BioBrief from "../../components/BioBrif"
 import { useEffect, useState, useContext } from "react"
 import axios from "axios"
 import { LoginContext } from "../../context"
@@ -25,9 +26,7 @@ const Biodata = ({data, userId}) => {
               cols: [
                   {
                     span: 4,
-                    components: <>
-                    <ProfileBrief user={user}/>
-                    </>
+                    components: <BioBrief user={user}/>
                   },
                   {
                     span: 8,

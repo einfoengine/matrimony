@@ -6,7 +6,7 @@ import { useState, useContext } from "react"
 import Link from "next/link"
 import axios from "axios"
 import { LoginContext } from "../../context"
-import BioBrief from "../../components/BioBrif"
+// import BioBrief from "../../components/BioBrif"
 
 export async function getServerSideProps (req, res) { 
   const {data} = await axios.get('http://localhost:8000/api/user/biodata', {params: req.query});
@@ -32,7 +32,8 @@ const Biodata = ({data, userId}:{data: object, userId: object}) => {
               cols: [
                   {
                     span: 4,
-                    components: <BioBrief user={user}/>
+                    components: <><ProfileBrief user={user}/></>
+                    // components: <><BioBrief user={user}/></>
                   },
                   {
                     span: 8,
