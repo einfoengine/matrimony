@@ -3,7 +3,7 @@ import { LoginContext, LoginProvider } from "../context";
 import Head from "next/head";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faFacebook} from '@fortawesome/free-brands-svg-icons';
+import {faFacebook, faTwitter, faInstagram, faYoutube} from '@fortawesome/free-brands-svg-icons';
 
 
 import Section from '../Elements/Section'
@@ -56,6 +56,9 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <span>
                   Find us on: 
                   <FontAwesomeIcon className="sam-top-social-icon" icon={faFacebook} />
+                  <FontAwesomeIcon className="sam-top-social-icon" icon={faTwitter} />
+                  <FontAwesomeIcon className="sam-top-social-icon" icon={faInstagram} />
+                  <FontAwesomeIcon className="sam-top-social-icon" icon={faYoutube} />
                 </span>
               </Col>
             </Row>

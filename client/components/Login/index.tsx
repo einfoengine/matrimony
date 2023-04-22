@@ -30,7 +30,7 @@ const Login = () => {
                 {/* <li data-bs-toggle="modal" data-bs-target="#logOutModal" className="dropdown-item"><a >Logout</a></li> */}
                 <Link href={`/biodata?user=${user?._id}`}><a className="dropdown-item">Biodata</a></Link>
                 <Link href={`/dashboard`}><a className="dropdown-item">Dashboard</a></Link>
-                <li data-bs-toggle="modal" data-bs-target="#logOutModal" className="dropdown-item"><a >Logout</a></li>
+                <li data-bs-toggle="modal" data-bs-target="#logOutModal" className="dropdown-item sam-menu-dropdown"><a >Logout</a></li>
               </ul>
             </div>
           </>

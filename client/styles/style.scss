@@ -3,6 +3,7 @@ $gutter: 30px;
 $section-padding: $gutter*3;
 // Color
 $white: #ffffff;
+$black: #101010;
 $dal-white: #cccccc;
 $gray: #606060;
 $orange-red: #E94822;
@@ -15,6 +16,11 @@ $theme-primary: #3a1965;
 $theme-secondary: #df314d;
 
 $theme-text: $white;
+
+// Global & common
+.modal{
+    color: $black;
+}
 
 // Mixins & Functions
 @mixin gradiant-bg($primary, $secondary) {
@@ -61,6 +67,10 @@ a{
 .sam-top-social-icon{
     max-width: 20px;
     margin-left: 10px;
+}
+
+.sam-menu-dropdown{
+    cursor: pointer;
 }
 // Elements/module
 .ex-cta{
