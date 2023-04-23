@@ -18,6 +18,9 @@ $theme-secondary: #df314d;
 $theme-text: $white;
 
 // Global & common
+.sam-section{
+    margin-top: $gutter * 2;
+}
 .modal{
     color: $black;
 }

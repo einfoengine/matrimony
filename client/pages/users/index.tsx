@@ -12,11 +12,19 @@ import Default from '../../Layouts/Default.layout';
 const Users = () => {
   const {state} = useContext(LoginContext);
   const [users, setUsers] = useState();
+  const [liked, setLiked] = useState();
   useEffect(()=>{
     axios.get('http://localhost:3000/api/users', { withCredentials: true }).then((res)=>{
       const users = res.data;
       setUsers(users);
     });
+    axios.get(`http://localhost:3000/api/user`).then((res)=>{
+      const user = res.data;
+      console.log("User: ", user);
+    })
+    // if(state){
+    // }
+    // console.log("State: ",state.user._id);
   },[state]);
   
   if(users){
@@ -45,7 +53,7 @@ const Users = () => {
     ]
     return (
       <section id="sam-users" className="sam-users sam-section">
-        <div className='container'>  
+        <div className='container'>
           <Default layoutPayload={payload}/>
         </div>
       </section>
