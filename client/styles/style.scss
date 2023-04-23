@@ -58,6 +58,9 @@ a{
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 20px;
+    > div {
+        max-width: calc(100%/3);
+    }
 }
 .theme-grid-4{
     display: grid;
@@ -73,11 +76,13 @@ a{
     cursor: pointer;
 }
 // Elements/module
+// ---------------
 .ex-cta{
     .ex-sub-heading{
         color: $white;
     }
 }
+// Bio brief
 .sam-bio-brif{
     img{
         margin-right: 10px;
@@ -95,7 +100,38 @@ a{
         }
     }
 }
-
+// User
+.sam-user{
+    overflow: hidden;
+    figure{
+        position: relative;
+        margin: 0;
+    }
+    .sam-user-info{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-image: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.7));
+        padding: 30px 15px 15px 15px;
+    }
+    .sam-verify{
+        position: absolute;
+        top: 15px;
+        left: 15px;
+    }
+    .sam-btn-like{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        border: 0 none;
+        border-radius: 4px;
+        .sam-icon{
+            color: $black;
+            width: 15px;
+        }
+    }
+}
 
 // Sections
 .ex-section{
@@ -154,7 +190,7 @@ h4.ex-jumbotron-sub-title.ex-text-dal-white{
 .ex-sec-footer{
     background: $theme-secondary;
     bottom: 0;
-    // position: absolute;
+    margin-top: 100px;
     width: 100%;
 }
 // Ex-typography
@@ -223,5 +259,7 @@ body{
     background: $theme-primary;
     color: $theme-text;
 }
+// Users
+
 
 // Biodata, registration

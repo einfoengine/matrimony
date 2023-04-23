@@ -5,6 +5,9 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import jwt_decode from "jwt-decode";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+
 const RenderUsers = ({users, showLike, showMessage, showBio}:{user:any, users:any, handleLike: any, showLike: true|false, showMessage: true|false, showBio: true|false}) => {
   const [status, setStatus]=useState();
   const [slide, setSlide]=useState({state: "closed"})
@@ -14,12 +17,7 @@ const RenderUsers = ({users, showLike, showMessage, showBio}:{user:any, users:an
   useEffect(()=>{
     const token = jwt_decode(JSON.parse(window.localStorage.getItem("user")).token)
     setStatus(token);
-    console.log("Local", token);
   },[]);
-  
-  useEffect(()=>{
-    console.log("---> ",slide);
-  },[slide]);
 
   const handleLike = async (e:any) => {
     try {
@@ -40,11 +38,11 @@ const RenderUsers = ({users, showLike, showMessage, showBio}:{user:any, users:an
 
 
   return (
-    <div className='theme-grid-3'>
+    <div id='sam-users' className='theme-grid-3 sam-component'>
     {
       users.map((e:any)=>{
-        return <div className='sam-component border rounded' key={'user_id_'+e._id}>
-          <figure className="p-3">
+        return <div className='sam-user border rounded' key={'user_id_'+e._id}>
+          <figure>
             {e.avatar
               &&
               (status?.status!=='verified'?
@@ -56,27 +54,28 @@ const RenderUsers = ({users, showLike, showMessage, showBio}:{user:any, users:an
                 <img src={`http://localhost:8000/static/images/${e?.avatar}`} layout='responsive' className='img-fluid' user_id={e._id} />
               </Link>
             )}
-            {status?.status==='verified'?<Link href={`http://localhost:3000/users/${e._id}`} passHref>
+            <span className='badge bg-success sam-verify'>{e?.status?"Verified":"Not verified"}</span>  
+            <div className="sam-user-info">
+              {status?.status==='verified'?<Link href={`http://localhost:3000/users/${e._id}`} passHref>
                 <h4 className='mt-3'>{e?.status === 'verified' ? e?.name.split(" ") : e?.name.split(" ")[0]}</h4>
-            </Link>:<h4 className='mt-3'>{e?.status === 'verified' ? e?.name.split(" ") : e?.name.split(" ")[0]}</h4>}
-            <span className='badge bg-success'>{e?.status?"Verified":"Not verified"}</span>  
-            <div>{`Age - ${y - Number(e?.dob)}`}</div>
-            {status?.status&&<span>User ID - {e?._id}</span>}
-            <hr />
-            <div className="">
+              </Link>:<h4 className='mt-3'>{e?.status === 'verified' ? e?.name.split(" ") : e?.name.split(" ")[0]} - {y - Number(e?.dob)}</h4>}
+              {status?.status&&<span>User ID - {e?._id}</span>}
               <div>Profession - {e?.profession}</div>
               {status?.status === 'verified' && <div>NID - {e?.nid}</div>}
-              {/* <div>Profession - </div> */}
               <div>Lives in - {e?.city}</div>
               <div>Religion - {e?.religion}</div>
-              {/* <div>Phone - {e?.phone_number}</div> */}
-              {/* <div>Email - {e?.user_name}</div> */}
               {status?.status==='verified' && <div>Email - {e?.user_name}</div>}
             </div>
             {
               showLike===true
               &&
-              <button type='button' className='btn-primary mt-2' onClick={()=>{handleLike(e?._id)}}>Like</button>
+              <>
+                {/* hi */}
+                <button type='button' className='sam-btn-like' onClick={()=>{handleLike(e?._id)}}>
+                    {/* like */}
+                    <FontAwesomeIcon icon={faHeart} className='sam-icon'/>
+                </button>
+              </>
             }
             {
               showMessage===true
