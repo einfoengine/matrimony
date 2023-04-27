@@ -2,7 +2,7 @@ import express from "express";
 import multer from 'multer';
 import path from 'path';
 import jwt_decode from "jwt-decode";
-import User from "../../models/User.js";
+
 
 // Conntrollers
 import {Register, Login, Logout} from '../../controllers/auth.js';
@@ -91,11 +91,8 @@ const UploadGallery = multer({
 router.post('/registration', Register);
 router.post('/user/avatar', upload, Uploadavatar);
 router.post('/user/gallery', UploadGallery, UploadImages);
-// router.get('/uplads/images')
-// app.use('/static', express.static('public'))
 router.post('/login', Login);
 router.get('/logout', Logout);
-
 
 // Get users
 router.get('/user/:id', GetUser);

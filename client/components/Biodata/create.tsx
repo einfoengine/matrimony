@@ -64,8 +64,8 @@ const CreateBiodata = ({bio, userId}:{bio: object | null, userId: any}) => {
                 <div className="col-5">
                     <label className="form-label">Profession</label>
                     <select name="bio-father-profession" id="" className="form-select" placeholder="Select profession" onChange={e=>setFathersProfsssion(e.target.value)}>
-                        <option value="privet">Select one</option>
-                        <option value="privet" selected={bio?.fathers_profession==="privet"&&true}>Privet service</option>
+                        <option value="private">Select one</option>
+                        <option value="private" selected={bio?.fathers_profession==="private"&&true}>private service</option>
                         <option value="bank" selected={bio?.fathers_profession==="bank"&&true}>Bank high official</option>
                         <option value="gvt-a" selected={bio?.fathers_profession==="gvt-a"&&true}>GVT Job</option>
                         <option value="gvt-b" selected={bio?.fathers_profession==="gvt-b"&&true}>GVT high official</option>
@@ -86,7 +86,7 @@ const CreateBiodata = ({bio, userId}:{bio: object | null, userId: any}) => {
                     <label className="form-label">Profession</label>
                     <select name="bio-mother-profession" id="bio-mother-profession" className="form-select" onChange={e=>setMothersProfsssion(e.target.value)}>
                         <option value="home-maker" selected={bio?.mothers_profession==="home-maker"&&true}>Home maker</option>
-                        <option value="privet" selected={bio?.mothers_profession==="privet"&&true}>Privet service</option>
+                        <option value="private" selected={bio?.mothers_profession==="private"&&true}>private service</option>
                         <option value="bank-a" selected={bio?.mothers_profession==="bank-a"&&true}>Bank high official</option>
                         <option value="gvt-b" selected={bio?.mothers_profession==="gvt-b"&&true}>GVT Job</option>
                         <option value="gvt-a" selected={bio?.mothers_profession==="gvt-a"&&true}>GVT high official</option>

@@ -60,7 +60,6 @@ export const GetRecentUsers = async (req, res)=>{
 
 // GetUser
 export const GetUser = async (req, res)=>{
-    // console.log();
     try {
         const user = await User.findById(req.params.id).exec();
         res.json(user);
@@ -72,10 +71,7 @@ export const GetUser = async (req, res)=>{
 export const GetUserGallery = async (req, res)=>{
     try {
         const gallery = await Gallery.findOne({user: req.query.id});
-        // console.log("user: ", req.query.id);
-        // console.log("Gallery: ", gallery);
         res.json(gallery);
-        // res.send("gallery");
     } catch (err) {
         console.log(err);
         res.send(err)
@@ -89,7 +85,6 @@ export const GetLiked = async (req, res) => {
         const likedProfiles = await User.find({
             '_id': { $in: user.liked.map(ObjectId) },
         });
-        // console.log(likedProfiles);
         res.json(likedProfiles);
     } catch (err) {
         res.send(err);

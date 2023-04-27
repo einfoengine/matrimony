@@ -18,17 +18,22 @@ const Users = () => {
       const users = res.data;
       setUsers(users);
     });
-    axios.get(`http://localhost:3000/api/user`).then((res)=>{
-      const user = res.data;
-      console.log("User: ", user);
-    })
-    // if(state){
-    // }
-    // console.log("State: ",state.user._id);
+    if(state.user){
+      try {
+        axios.get('/api/users/liked/', {params: {user: state.user._id}}).then((res)=>{
+          setLiked(res.data);
+        });
+      } catch (error) {
+        console.log("Dashboard find user rejection - ", error);
+      }
+    }
   },[state]);
   
   if(users){
-    console.log("users:", users);
+    console.log("Liked:", liked);
+    const likedIds = liked?.map((e)=>{
+      return e._id
+    })
     const payload:layoutPayload = [
       {
         id:'hero',
@@ -43,7 +48,7 @@ const Users = () => {
                   {/* <h4>Recomended for you</h4>
                   <RecomendedUsers users={users} showLike={true}/> */}
                   <h4>All users</h4>
-                  <RenderUsers users={users} showLike={true}/>
+                  <RenderUsers users={users} liked={likedIds} showLike={true}/>
                 </>
               },
             ]
