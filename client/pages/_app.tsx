@@ -53,13 +53,21 @@ function MyApp({ Component, pageProps }: AppProps) {
                 </span>
               </Col>
               <Col className="col-4">
-                <span>
+                <div className="sam-social-links">
                   Find us on: 
-                  <FontAwesomeIcon className="sam-top-social-icon" icon={faFacebook} />
-                  <FontAwesomeIcon className="sam-top-social-icon" icon={faTwitter} />
-                  <FontAwesomeIcon className="sam-top-social-icon" icon={faInstagram} />
-                  <FontAwesomeIcon className="sam-top-social-icon" icon={faYoutube} />
-                </span>
+                  <a href="www.facebook.com">
+                    <FontAwesomeIcon className="sam-top-social-icon" icon={faFacebook} />
+                  </a>
+                  <a href="https://www.twitter.com">
+                    <FontAwesomeIcon className="sam-top-social-icon" icon={faTwitter} />
+                  </a>
+                  <a href="https://www.instagram.com">
+                    <FontAwesomeIcon className="sam-top-social-icon" icon={faInstagram} />
+                  </a>
+                  <a href="https://www.youtube.com">
+                    <FontAwesomeIcon className="sam-top-social-icon" icon={faYoutube} />
+                  </a>
+                </div>
               </Col>
             </Row>
             <Row id='ex-row-top' className='align-items-center'>

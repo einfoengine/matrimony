@@ -17,8 +17,8 @@ const Biodata = ({data, userId}) => {
   
   const payload:layoutPayload = [
     {
-      id:"ex-registration",
-      name: "ex-registration",
+      id:"sam-registration",
+      name: "sam-registration",
       className: "",
       type: "fixed",
       rows: [

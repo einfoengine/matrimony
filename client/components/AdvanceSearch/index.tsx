@@ -20,7 +20,6 @@ const AdvanceSearch = ({className}:{className?:string | null}) => {
     const notify = () => toast("You need to login!")
   return (
       <>
-        {console.log(`***** >> ! >> ${state?.user?._id}`)}
         <div className={`sam-component ex-advance-search ${className}`}>
             <form className="theme-grid">
                 <div className="grid-item">
