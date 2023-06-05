@@ -78,7 +78,8 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <MainNav />
               </Col>
               <Col className='col-3'>
-                <Login />
+                <>hello</>
+                {/* <Login /> */}
               </Col>
             </Row>
           </Section>
