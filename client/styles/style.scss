@@ -187,17 +187,17 @@ a{
             border-bottom: 1px solid rgba($white, 0.1);
         }
     }
-    .ex-column:last-child{
-        display: flex;
-        margin-left: auto;
-        > div{
-            display: flex;
-            margin-left: auto;
-            > *{
-                min-width: 30px;
-            }
-        }
-    }
+    // .ex-column:last-child{
+    //     display: flex;
+    //     margin-left: auto;
+    //     > div{
+    //         display: flex;
+    //         margin-left: auto;
+    //         > *{
+    //             min-width: 30px;
+    //         }
+    //     }
+    // }
 }
 #ex-section-hero{
     div.ex-col{

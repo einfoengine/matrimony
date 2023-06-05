@@ -28,7 +28,7 @@ const Gallery = () => {
                         span: 8,
                         components: <>
                           <ImageUploader/>
-                <EasyGallery/>
+                          <EasyGallery/>
                         </>
                       }
                   ]
