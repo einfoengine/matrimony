@@ -21,7 +21,6 @@ const index = () => {
   const notify = () => toast("To find partner, login first!");
   return (
     <>
-    {console.log("Main menu: ", user)}
       <nav className={styles.exbg}>
         <Link href={'/'}><a className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Home</a></Link>
         {/* {state.user && <Link href={`/biodata?user=${state?.user?._id}`}><a className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Biodata</a></Link>} */}
