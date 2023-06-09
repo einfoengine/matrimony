@@ -7,7 +7,7 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const index = () => {
+const MainNav = () => {
   const {state} = useContext(LoginContext);
   const [user, setUser] = useState();
   // const router = useRouter();
@@ -37,4 +37,4 @@ const index = () => {
   )
 }
 
-export default index
+export default MainNav
