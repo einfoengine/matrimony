@@ -17,7 +17,7 @@ const Login = () => {
       setUser(res?.data);
     });
   },[state]);
-  if(user){
+
     return (
       <>
         {
@@ -87,9 +87,7 @@ const Login = () => {
         </div>
       </>
     )
-  }else{
-    return <>We are sorry user system is not found!</>
-  }
+  
 }
 
 export default Login;
