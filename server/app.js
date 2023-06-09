@@ -28,7 +28,7 @@ app.get('/',(req,res)=>{
     res.send('This is running!')
 })
 app.use(cors({
-    origin: "http://localhost:3000"
+    origin: "http://151.106.113.176:3000"
 }));
 
 // Router
