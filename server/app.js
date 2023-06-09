@@ -28,7 +28,7 @@ app.get('/',(req,res)=>{
     res.send('This is running!')
 })
 app.use(cors({
-    origin: '*'
+    origin: process.env.HOST
 }));
 
 // Router

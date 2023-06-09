@@ -1,7 +1,6 @@
+import Head from "next/head";
 import { useContext, useEffect } from "react";
 import { LoginContext, LoginProvider } from "../context";
-import Head from "next/head";
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faFacebook, faTwitter, faInstagram, faYoutube} from '@fortawesome/free-brands-svg-icons';
 
@@ -24,12 +23,9 @@ import type { AppProps } from 'next/app'
 import { Value } from "sass";
 import Link from "next/link";
 
-// axios.defaults.baseURL = 'http://localhost:3000';
-
 
 function MyApp({ Component, pageProps }: AppProps) {
   const login = useContext(LoginContext);
-
   return (
     <>
       <Head>

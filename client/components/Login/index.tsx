@@ -17,7 +17,6 @@ const Login = () => {
       setUser(res?.data);
     });
   },[state]);
-
     return (
       <>
         {
@@ -25,7 +24,7 @@ const Login = () => {
           ?
           <>
             <div className="dropdown">
-              <a className="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{user.name}</a>
+              <a className="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{user?.name}</a>
               <ul className="dropdown-menu">
                 {/* <li data-bs-toggle="modal" data-bs-target="#logOutModal" className="dropdown-item"><a >Logout</a></li> */}
                 <Link href={`/biodata?user=${user?._id}`}><a className="dropdown-item">Biodata</a></Link>
