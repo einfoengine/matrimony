@@ -49,7 +49,7 @@ const Biodata = ({data, userId}) => {
 export default Biodata
 
 export async function getServerSideProps (req, res) { 
-  const {data} = await axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_POST}/api/user/biodata`, {params: req.query});
+  const {data} = await axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/api/user/biodata`, {params: req.query});
   return {
     props: {
      data, userId: req.query.user
