@@ -19,7 +19,7 @@ export default UsersBySearch
 
 export async function getServerSideProps(context:any){
   const {query} = context;
-  const users = await axios.get('http://localhost:8000/api/user/biodata/search', {
+  const users = await axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/api/user/biodata/search`, {
     params: query
   });
   return{

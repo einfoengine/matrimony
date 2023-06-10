@@ -10,7 +10,7 @@ const Verify = () => {
   const router = useRouter();
   const handleSumit = (e) =>{
     e.preventDefault();
-    axios.put('http://localhost:3000/api/users/verify',{
+    axios.put(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_CLIENT_PORT}/api/users/verify`,{
       user: router.query.id,
       message: message,
       findings: findings,

@@ -21,7 +21,7 @@ const Registration = () => {
   const handleSubmit = async (e:any) => {
     e.preventDefault();
     try{
-      const data = await axios.post('http://localhost:8000/api/users/registration', {name, dob, religion, city, user_name, password, gender, phone_number, profession, nid});
+      const data = await axios.post(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/api/users/registration`, {name, dob, religion, city, user_name, password, gender, phone_number, profession, nid});
       const response = await axios.post('/api/users/login', {user_name, password});
       const {data: {user, token}} = response;
       console.log("Login response *** ", user.biodata);

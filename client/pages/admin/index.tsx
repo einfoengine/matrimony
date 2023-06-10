@@ -26,7 +26,7 @@ const Admin = ({users}:{users:any}) => {
 export default Admin
 
 export async function getStaticProps(){
-  const result = await axios.get('http://localhost:8000/api/users');
+  const result = await axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/api/users`);
   const users = result.data;
   return {
     props: {

@@ -29,7 +29,7 @@ const ProfileBrief = ({user}:{user:object}) => {
     return (
       <div className='sam-component border rounded sam-bio-brif'>
           <figure className="p-3">
-              <Link href={`/users/gallery/${userDetails?._id}`}><img src={`http://localhost:8000/static/images/${profilePic}`} layout='responsive' width={50} height={50}/></Link>
+              <Link href={`/users/gallery/${userDetails?._id}`}><img src={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/static/images/${profilePic}`} layout='responsive' width={50} height={50}/></Link>
               <h4 className='d-inline-block'>{userDetails?.name}</h4>
               <Link href={`/users/gallery/${userDetails?._id}`}><button type='button' className='btn btn-info'>See pictures</button></Link>
               <div>User ID - {userDetails?._id}</div>

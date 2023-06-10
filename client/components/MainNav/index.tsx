@@ -13,7 +13,7 @@ const MainNav = () => {
   // const router = useRouter();
 
   useEffect(()=>{
-    axios.get(`http://localhost:3000/api/users/user/${state?.user?._id}`).then((res)=>{
+    axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_CLIENT_PORT}/api/users/user/${state?.user?._id}`).then((res)=>{
       setUser(res?.data);
     });
   },[state]);

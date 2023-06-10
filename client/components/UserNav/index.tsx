@@ -14,7 +14,7 @@ const Login = () => {
   const router = useRouter();
 
   useEffect(()=>{
-    axios.get(`http://localhost:3000/api/users/user/${state?.user?._id}`).then((res)=>{
+    axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_CLIENT_PORT}/api/users/user/${state?.user?._id}`).then((res)=>{
       setUser(res?.data);
     });
     axios.get(`/api/users/user/${state?.user?._id}`).then((res)=>{
@@ -36,7 +36,7 @@ const Login = () => {
           ?
           <div className="d-flex">
           {console.log(state.user )}
-            <img src={`http://localhost:8000/static/images/${profilePic}`} layout='responsive' width={50} height={50} style={{marginRight: "10px", borderRadius: "50px", background: "rgba(255,255,255,0.2)", padding: "2px"}}/>
+            <img src={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_HOST}/static/images/${profilePic}`} layout='responsive' width={50} height={50} style={{marginRight: "10px", borderRadius: "50px", background: "rgba(255,255,255,0.2)", padding: "2px"}}/>
             <div className="dropdown">
               <a className="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{user.name}</a>
               <ul className="dropdown-menu">
@@ -84,7 +84,7 @@ const Login = () => {
                 <a className="text-primary" href="#" data-bs-dismiss="modal" aria-label="Close" onClick={
                   (e)=>{
                     e.preventDefault();
-                    axios.get(`http://localhost:3000/api/users/logout`).then((res)=>{
+                    axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_CLIENT_PORT}/api/users/logout`).then((res)=>{
                       console.log(res);
                     });
                     dispatch({

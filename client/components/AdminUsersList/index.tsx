@@ -12,7 +12,7 @@ const AdminUsersList = ({users, handleLike, showLike, showMessage}:{users:any, h
     console.log("Active");
   }
   const handleDelete = async (u) => {
-    const response = await axios.delete(`http://localhost:8000/api/users/user/${u._id}`);
+    const response = await axios.delete(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/api/users/user/${u._id}`);
   }
   
   return (
@@ -22,7 +22,7 @@ const AdminUsersList = ({users, handleLike, showLike, showMessage}:{users:any, h
         return <div className='sam-component border rounded' key={'user_id_'+e._id}>
           <figure className="p-3">
             <Image src="/images/profiles/user-1.jpg" layout='responsive' width={50} height={50}/>
-              <Link href={`http://localhost:3000/users/${e._id}`} passHref >
+              <Link href={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_CLIENT_PORT}/users/${e._id}`} passHref >
                 <h4>{e?.name}</h4>
               </Link>
               <span>User ID - {e?._id}</span>

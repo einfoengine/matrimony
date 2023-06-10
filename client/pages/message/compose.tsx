@@ -12,7 +12,7 @@ const ComposeMessage = () => {
     e.preventDefault();
     if(payload!==undefined){
       try {
-        const req = await axios.post('http://localhost:8000/api/messages/create', payload);
+        const req = await axios.post(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_HOST}/api/messages/create`, payload);
       } catch (err) {
         console.log(`Client error on message - ${err}`);
       }

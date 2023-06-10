@@ -9,7 +9,7 @@ const Inbox = (props) => {
   const [user, setUser] = useState();
 
   const getMessages = async () => {
-    const {data} = await axios.get('http://localhost:8000/api/messages/list', {params: {user: state.user._id}});
+    const {data} = await axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/api/messages/list`, {params: {user: state.user._id}});
     setMessages(data);
     return data;
   }

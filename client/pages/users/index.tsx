@@ -14,7 +14,7 @@ const Users = () => {
   const [users, setUsers] = useState();
   const [liked, setLiked] = useState();
   useEffect(()=>{
-    axios.get('http://localhost:3000/api/users', { withCredentials: true }).then((res)=>{
+    axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_CLIENT_PORT}/api/users`, { withCredentials: true }).then((res)=>{
       const users = res.data;
       setUsers(users);
     });

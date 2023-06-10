@@ -45,16 +45,16 @@ const RecomendedUsers = ({users, showLike, showMessage, showBio}:{user:any, user
             (
               status?.status!=='verified'
               ?
-              <img src={`http://localhost:8000/static/images/${e?.avatar}`} layout='responsive' className='img-fluid' user_id={e._id} 
+              <img src={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/static/images/${e?.avatar}`} layout='responsive' className='img-fluid' user_id={e._id} 
               onClick={(e)=>{
                 alert("You are Not Verified!", slide)}
               }/>
               :
-              <Link href={`http://localhost:3000/users/${e._id}`} passHref>
-                <img src={`http://localhost:8000/static/images/${e?.avatar}`} layout='responsive' className='img-fluid' user_id={e._id} />
+              <Link href={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_CLIENT_PORT}/users/${e._id}`} passHref>
+                <img src={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/static/images/${e?.avatar}`} layout='responsive' className='img-fluid' user_id={e._id} />
               </Link>
             )}
-            {status?.status==='verified'?<Link href={`http://localhost:3000/users/${e._id}`} passHref>
+            {status?.status==='verified'?<Link href={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_CLIENT_PORT}/users/${e._id}`} passHref>
                 <h4 className='mt-3'>{e?.status === 'verified' ? e?.name.split(" ") : e?.name.split(" ")[0]}</h4>
             </Link>:<h4 className='mt-3'>{e?.status === 'verified' ? e?.name.split(" ") : e?.name.split(" ")[0]}</h4>}
             <span className='badge bg-success'>{e?.status?"Verified":"Not verified"}</span>  

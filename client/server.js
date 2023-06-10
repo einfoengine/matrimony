@@ -13,7 +13,7 @@ app.prepare().then(()=>{
     // Apply proxy in dev mode
     if(dev){
         server.use('/api', createProxyMiddleware({
-            target: 'http://localhost:8000',
+            target: `http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}`,
             changeOrigin: true
         }))
     }
@@ -22,7 +22,7 @@ app.prepare().then(()=>{
     })
     server.listen(3000, (err)=>{
         if(err) throw err;
-        console.log("Next js running via proxy. Ready on - http://localhost:\"8000\"");
+        console.log(`Next js running via proxy. Ready on - http://${process.env.NEXT_PUBLIC_HOST}:\"${process.env.NEXT_PUBLIC_SERVER_PORT}\"`);
         console.log(process.env);
     })
 }).catch(err=>{

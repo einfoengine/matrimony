@@ -13,7 +13,7 @@ const Login = () => {
   const router = useRouter();
 
   useEffect(()=>{
-    axios.get(`http://localhost:3000/api/users/user/${state?.user?._id}`).then((res)=>{
+    axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_CLIENT_PORT}/api/users/user/${state?.user?._id}`).then((res)=>{
       setUser(res?.data);
     });
   },[state]);
@@ -25,7 +25,7 @@ const Login = () => {
           ?
           <>
             <div className="dropdown">
-              <a className="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{user.name}</a>
+              <a className="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{user?.name}</a>
               <ul className="dropdown-menu">
                 {/* <li data-bs-toggle="modal" data-bs-target="#logOutModal" className="dropdown-item"><a >Logout</a></li> */}
                 <Link href={`/biodata?user=${user?._id}`}><a className="dropdown-item">Biodata</a></Link>
@@ -69,7 +69,7 @@ const Login = () => {
                 <a className="text-primary" href="#" data-bs-dismiss="modal" aria-label="Close" onClick={
                   (e)=>{
                     e.preventDefault();
-                    axios.get(`http://localhost:3000/api/users/logout`).then((res)=>{
+                    axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_CLIENT_PORT}/api/users/logout`).then((res)=>{
                       console.log(res);
                     });
                     dispatch({
