@@ -141,10 +141,14 @@ export const SetLike = async (req, res) =>{
 // Set verified
 export const SetVerify = async (req, res) =>{
     try {
-        console.log("Hello update", req.body);
-        const result = await User.findByIdAndUpdate({_id: req.body.user},{
-            status: req.body.status
-        });
+        try {
+            const result = await User.findByIdAndUpdate({_id: req.body.user},{
+                status: req.body.status
+            });
+            console.log('User updated - ', result);
+        } catch (error) {
+            console.log(`Verification faild error: ${error}`)
+        }
         const verify = await VerificationReport.create({
             user: req.body.user,
             message: req.body.message,
@@ -153,6 +157,7 @@ export const SetVerify = async (req, res) =>{
         res.json({
             result,
             verify
+            // body: req.body
         });
     } catch (err) {
         console.log("Verification Error", err);

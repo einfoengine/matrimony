@@ -5,9 +5,6 @@ import Link from 'next/link';
 
 const AdminUsersList = ({users, handleLike, showLike, showMessage}:{users:any, handleLike: any, showLike: true|false, showMessage: true|false}) => {
 
-  const handleVerify = (u) => {
-    console.log("Verified");
-  }
   const handleActive = (u) => {
     console.log("Active");
   }
@@ -16,9 +13,10 @@ const AdminUsersList = ({users, handleLike, showLike, showMessage}:{users:any, h
   }
   
   return (
-    <div className='container d-flex'>
+    <div className='container'>
     {
       users.map((e:any)=>{
+        console.log('user - ', e.name,' ',e.status);
         return <div className='sam-component border rounded' key={'user_id_'+e._id}>
           <figure className="p-3">
             <Image src="/images/profiles/user-1.jpg" layout='responsive' width={50} height={50}/>
@@ -37,7 +35,7 @@ const AdminUsersList = ({users, handleLike, showLike, showMessage}:{users:any, h
                 &&
                 <button type='button' className='btn-primary' onClick={()=>{handleLike(e?._id)}}>Like</button>
               } */}
-              <Link href={{pathname:"/admin/verify", query:{id:e?._id}}}><button type='button' className='btn-primary' onClick={()=>{handleVerify(e)}}>Verify</button></Link>
+              <Link href={{pathname:"/admin/verify", query:{id:e?._id}}}><button type='button' className='btn-primary'>Verify</button></Link>
               <button type='button' className='btn-primary' onClick={()=>{handleActive(e)}}>Active</button>
               <button type='button' className='btn-primary' onClick={()=>{handleDelete(e)}}>Delete</button>
           </figure>

@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-const CreateBiodata = ({bio, userId}:{bio: object | null, userId: any}) => {    
+const CreateBiodata = ({bio, userId}:{bio: object | null, userId: any}) => {
+    const router = useRouter();
     const [present_address, setPresentAddress] = useState(bio?.present_address);
     const [parmenent_address, setPermanentAddress] = useState(bio?.present_address);
     const [city, setCity] = useState(bio?.city);
@@ -21,11 +24,10 @@ const CreateBiodata = ({bio, userId}:{bio: object | null, userId: any}) => {
         e.preventDefault();
         try {
             const response = await axios.post('/api/user/biodata',{user: userId , present_address, parmenent_address, city, educaton, profession, fathers_name, fathers_profession, mothers_name, mothers_profession, parents_profession, relative, syblings, seeking, about});
-            if(response.data.statetus===200){
-                
-            }
-            console.log("Bio response", data);
+            router.push(`/biodata?user=${userId}`);
+            console.log("Bio response", response);
         } catch (err) {
+            alert("Something wrong! Biodata create/edit error: ");
             console.log(err);
         }
     }

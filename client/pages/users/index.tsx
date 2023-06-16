@@ -45,8 +45,6 @@ const Users = () => {
             cols:[
               {
                 components: <>
-                  {/* <h4>Recomended for you</h4>
-                  <RecomendedUsers users={users} showLike={true}/> */}
                   <h4>All users</h4>
                   <RenderUsers users={users} liked={likedIds} showLike={true}/>
                 </>

@@ -21,12 +21,14 @@ const Gallery = () => {
                       {
                         span: 4,
                         components: <>
+                        Sidemenu
                         <SideMenu active={"message"}/>
                         </>
                       },
                       {
                         span: 8,
                         components: <>
+                          gallery
                           <ImageUploader/>
                           <EasyGallery/>
                         </>

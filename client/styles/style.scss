@@ -126,17 +126,15 @@ a{
 // User
 .sam-user{
     overflow: hidden;
+    + .sam-user{
+        margin-top: 30px;
+    }
     figure{
+        display: flex;
         position: relative;
-        margin: 0;
     }
     .sam-user-info{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-image: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.7));
-        padding: 30px 15px 15px 15px;
+        margin-left: 30px;
     }
     .sam-verify{
         position: absolute;
@@ -156,6 +154,17 @@ a{
     }
 }
 // Users
+.sam-users{
+    .sam-avatar{
+        width: 300px;
+    }
+    figure{
+        img{
+            width: 100%;
+            min-height: 400px;
+        }
+    }
+}
 .sam-liked{
     background-color: $theme-secondary;
 }

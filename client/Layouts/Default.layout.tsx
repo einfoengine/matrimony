@@ -28,9 +28,9 @@ const Default = ({layoutPayload}:{layoutPayload: layoutPayload}) => {
       {
         layoutPayload.map((section:any, index: number)=>
           <Section
-            key={section.id != undefined ? 'ex-section-'+section.id : 'ex-section-'+section.name}
-            id={section.id != undefined ? 'ex-section-'+section.id : 'ex-section-'+section.name}
-            className={'ex-section '+section.className!=="undefined"&&section.className}
+            key={section.id != undefined ? 'sam-section-'+section.id : 'sam-section-'+section.name}
+            id={section.id != undefined ? 'sam-section-'+section.id : 'sam-section-'+section.name}
+            className={'sam-section '+section.className!=="undefined"&&section.className}
             container={section.type}
           >
             {section.rows.map((row:any, index:number)=>{

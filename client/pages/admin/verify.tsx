@@ -10,14 +10,18 @@ const Verify = () => {
   const router = useRouter();
   const handleSumit = (e) =>{
     e.preventDefault();
-    axios.put(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_CLIENT_PORT}/api/users/verify`,{
-      user: router.query.id,
-      message: message,
-      findings: findings,
-      status: info
-    }).then((res)=>{
-      console.log("Status - ",res?.data?.result?.status);
-    });
+    try {
+      axios.put(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_CLIENT_PORT}/api/users/verify`,{
+        user: router.query.id,
+        message: message,
+        findings: findings,
+        status: info
+      }).then((res)=>{
+        console.log("Status - ",res?.data?.result?.status);
+      });
+    } catch (error) {
+      console.log('Verigication failed error: ',error);
+    }
   }
 
   return (

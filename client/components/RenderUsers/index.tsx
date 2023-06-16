@@ -18,6 +18,7 @@ const RenderUsers = ({users, showLike, showMessage, showBio, liked}:{liked: any,
   useEffect(()=>{
     const token = jwt_decode(JSON.parse(window.localStorage.getItem("user")).token)
     setStatus(token);
+    console.log("token ", token);
   },[]);
 
   const handleLike = async (e:any) => {
@@ -39,24 +40,25 @@ const RenderUsers = ({users, showLike, showMessage, showBio, liked}:{liked: any,
 
 
   return (
-    <div id='sam-users' className='theme-flex-4 sam-component'>
-      {console.log("likedUsers --> ", liked)}
+    <div id='sam-users' className='sam-users sam-component'>
     {
       users.map((e:any)=>{
         return (
           <div className='sam-user border rounded' key={'user_id_'+e._id}>
             <figure>
-              {e.avatar
-                &&
-                (status?.status!=='verified'?
-                <img src={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/static/images/${e?.avatar}`} layout='responsive' className='img-fluid' user_id={e._id} onClick={(e)=>{
-                  alert("You are Not Verified!", slide);
-                }}/>
-                :
-                <Link href={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_CLIENT_PORT}/users/${e._id}`} passHref>
-                  <img src={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/static/images/${e?.avatar}`} layout='responsive' className='img-fluid' user_id={e._id} />
-                </Link>
-              )}
+              <div className="sam-avatar">
+                {e.avatar
+                  &&
+                  (status?.status!=='verified'?
+                  <img src={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/static/images/${e?.avatar}`} layout='responsive' className='img-fluid' user_id={e._id} onClick={(e)=>{
+                    alert("You are Not Verified!", slide);
+                  }}/>
+                  :
+                  <Link href={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_CLIENT_PORT}/users/${e._id}`} passHref>
+                    <img src={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/static/images/${e?.avatar}`} layout='responsive' className='img-fluid' user_id={e._id} />
+                  </Link>
+                )}
+              </div>
               <span className='badge bg-success sam-verify'>{e?.status?"Verified":"Not verified"}</span>  
               <div className="sam-user-info">
                 {status?.status==='verified'?<Link href={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_CLIENT_PORT}/users/${e._id}`} passHref>

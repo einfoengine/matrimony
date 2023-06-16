@@ -41,10 +41,11 @@ const Gallery = ({data}) => {
                     span: 12,
                     components: 
                     <span className="eie-gallery">
+                      <h3>Gallery</h3>
                       <LightGallery onInit={onInit} speed={500} plugins={[lgThumbnail, lgZoom]}>
                         {data?.images?.map((image, index) => (
-                          <a href={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_HOST}/static/gallery/${data?.images[index]}`} key={'user-gallery-' + index}>
-                            <img src={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_HOST}/static/gallery/${data?.images[index]}`} alt="" />
+                          <a href={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/static/gallery/${data?.images[index]}`} key={'user-gallery-' + index}>
+                            <img src={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/static/gallery/${data?.images[index]}`} alt="" />
                           </a>
                         ))}
                       </LightGallery>
@@ -56,9 +57,10 @@ const Gallery = ({data}) => {
     }
   ]
   return (
-      <div className="vd-top-space">
-          <Default layoutPayload={payload}/>
-      </div>
+    console.log("Gallery data ",data),
+    <div className="vd-top-space">
+        <Default layoutPayload={payload}/>
+    </div>
   );
 }
 

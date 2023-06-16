@@ -25,7 +25,7 @@ const Biodata = ({data, userId}:{data: object, userId: object}) => {
     {
       id:"ex-registratio",
       name: "ex-registratio",
-      className: "no-padding",
+      className: "sam-biodata",
       type: "fixed",
       rows: [
           {
@@ -52,7 +52,7 @@ const Biodata = ({data, userId}:{data: object, userId: object}) => {
  
   
   return (
-    <div className="ex-page vd-top-space">
+    <div className="ex-page">
       <Default layoutPayload = {payload}/>
     </div>
   )
