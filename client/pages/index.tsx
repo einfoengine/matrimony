@@ -29,7 +29,7 @@ const payload:layoutPayload = [
             components: <>
             <Hero 
               className='ex-hero'
-              childWrapClass='ex-jumbotron text-center' 
+              childWrapClass='sam-jumbotron text-center' 
               title='We help in match making' 
               subTitle="It    's easy to find and connect with your better half"
               text='If you need you may get help of our experienced councilor'
@@ -77,7 +77,7 @@ const payload:layoutPayload = [
     ],
   },
   {
-    id:'ex-cta-1',
+    id:'sam-cta-1',
     name: "cta",
     className: "mt-4",
     type: 'fixed',
@@ -87,7 +87,7 @@ const payload:layoutPayload = [
           {
             components: <>
               <CallToAction
-                className="text-center ex-bg-primary-gradiant ex-text-white p-4"
+                className="text-center sam-bg-primary-gradiant ex-text-white p-4"
                 title='Connect your perfect match'
                 bigText='1700'
                 subTitle='brids around you'

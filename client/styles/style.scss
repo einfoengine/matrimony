@@ -9,7 +9,7 @@ $gray: #606060;
 $orange-red: #E94822;
 $purple-red: #C339CE;
 
-$ex-sub-heading: $dal-white;
+$sam-sub-heading: $dal-white;
 
 // Theme colors
 $theme-primary: #3a1965;
@@ -18,9 +18,6 @@ $theme-secondary: #df314d;
 $theme-text: $white;
 
 // Global & common
-.sam-section{
-    margin-top: $gutter * 2;
-}
 .modal{
     color: $black;
 }
@@ -43,13 +40,13 @@ a{
 }
 
 // Ex-Helper
-.ex-jumbotron{
+.sam-jumbotron{
     padding: $section-padding 0;
 }
-.ex-bg-gray{
+.sam-bg-gray{
     background-color: $gray;
 }
-.ex-bg-primary-gradiant{
+.sam-bg-primary-gradiant{
     @include gradiant-bg($orange-red, $purple-red )
 }
 .theme-grid{
@@ -69,16 +66,7 @@ a{
         margin-bottom: 30px;
     }
 }
-// .theme-grid-3{
-//     display: grid;
-//     // grid-template-columns: 1fr 1fr 1fr;
-//     grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
-//     // grid-auto-rows: 200px;
-//     gap: 20px;
-//     > div{
-//         height: fit-content;
-//     }
-// }
+
 .theme-grid-4{
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -94,13 +82,13 @@ a{
 }
 // Elements/module
 // ---------------
-.ex-cta{
-    .ex-sub-heading{
+.sam-cta{
+    .sam-sub-heading{
         color: $white;
     }
 }
 // Registration
-.ex-registration{
+.sam-registration{
     span{
         color: $dal-white;
     }
@@ -170,7 +158,7 @@ a{
 }
 
 // Sections
-.ex-section{
+.sam-section{
     padding-top: $section-padding;
     padding-bottom: $section-padding;
     &.no-padding{
@@ -178,50 +166,49 @@ a{
         padding-bottom: 0px;
     }
 }
-#ex-section-top svg{
+#sam-section-top svg{
     width: 20px;
     display: inline;
     margin-right: 10px;
 }
-.ex-top{
-    background: rgba($theme-primary, 0.3);
-    // position: absolute;
+.sam-top{
+    background: $white;
+    color: $theme-primary;
     top: 0;
     left: 0;
     right: 0;
     border-bottom: 1px solid rgba($white, 0.1);
-    .ex-row{
+    .sam-row{
         padding: 15px 0;
         &:first-child{
             border-bottom: 1px solid rgba($white, 0.1);
         }
     }
-    // .ex-column:last-child{
-    //     display: flex;
-    //     margin-left: auto;
-    //     > div{
-    //         display: flex;
-    //         margin-left: auto;
-    //         > *{
-    //             min-width: 30px;
-    //         }
-    //     }
-    // }
+    .sam-column:last-child{
+        display: flex;
+        margin-left: auto;
+        > div{
+            margin-left: auto;
+            > *{
+                min-width: 30px;
+            }
+        }
+    }
 }
-#ex-section-hero{
-    div.ex-col{
+#sam-section-hero{
+    div.sam-col{
         padding: 0;
     }
-    .ex-jumbotron{
+    .sam-jumbotron{
         padding: 300px 0;
     }
 }
 // Hero
-h3.ex-jumbotron-title.ex-text-white{
+h3.sam-jumbotron-title.ex-text-white{
     font-size: 40px;
     text-transform: uppercase;
 }
-h4.ex-jumbotron-sub-title.ex-text-dal-white{
+h4.sam-jumbotron-sub-title.ex-text-dal-white{
     color: $theme-secondary;
 }
 // eie-advanced-search
@@ -230,7 +217,7 @@ h4.ex-jumbotron-sub-title.ex-text-dal-white{
     color: $theme-primary;
     margin-top: -160px !important;
 }
-// #ex-section-advance-search{
+// #sam-section-advance-search{
 
 // }
 // Footer
@@ -248,7 +235,7 @@ h4.ex-jumbotron-sub-title.ex-text-dal-white{
     color: $dal-white;
 }
 
-.ex-sub-heading, .ex-element-sub-title{
+.sam-sub-heading, .ex-element-sub-title{
     color: $theme-secondary;
     // font-weight: 100;
 }
@@ -289,10 +276,7 @@ h4.ex-jumbotron-sub-title.ex-text-dal-white{
     height: 50px;
 }
 /* Page spesific */
-.vd-top-space{
-    padding-top: 200px;
-}
-.eie-gallery > div{
+.sam-gallery > div{
     display: grid;
     grid-template-columns: 260px 260px 260px 260px;
     grid-column-gap: 20px;

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link';
 import axios from 'axios';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 
@@ -43,8 +42,11 @@ const ProfileBrief = ({user}:{user:object}) => {
           </figure>
       </div>
     )
+  }else{
+    return(
+      <h3 className='text-center'>User undefined!</h3>
+    )
   }
-  <h3 className='text-center'>User undefined!</h3>
 }
 
 export default ProfileBrief

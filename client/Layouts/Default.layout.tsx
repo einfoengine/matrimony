@@ -38,12 +38,12 @@ const Default = ({layoutPayload}:{layoutPayload: layoutPayload}) => {
               return(<Row 
               key={`ex-${section.name}-${index}`} 
               id={rowNumber}
-              className={`ex-row-${index}`}>
+              className={`sam-row-${index}`}>
                 {
                   row.cols.map((col:any, index:number)=>
                   <Col 
                   key={`${section.name}-${row.id}-'col-'${index}`} 
-                  className={`ex-col ${rowNumber+'-col-'+index} col-${col.span}`}
+                  className={`sam-col ${rowNumber+'-col-'+index} col-${col.span}`}
                   >
                       {col.components}
                     </Col>

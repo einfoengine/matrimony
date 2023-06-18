@@ -7,7 +7,7 @@ const Row = ({className, children}:{
   children: JSX.Element | JSX.Element[]
 }) => {
   return (
-    <div className={`ex-row row ${className}`}>
+    <div className={`sam-row row ${className}`}>
           {children}
     </div>
   )

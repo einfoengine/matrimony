@@ -6,6 +6,6 @@ const Section = (props:{
   className: string,
   container: 'fixed' | 'fluid',
   children: JSX.Element|JSX.Element[]
-}) => <section id={props.id} className={`ex-section ${props.className}`}><div className={`ex-container ${props.container!='fluid'?'container':'container-fluid'}`}>{props.children}</div></section>
+}) => <section id={props.id} className={`sam-section ${props.className}`}><div className={`ex-container ${props.container!='fluid'?'container':'container-fluid'}`}>{props.children}</div></section>
 
 export default Section

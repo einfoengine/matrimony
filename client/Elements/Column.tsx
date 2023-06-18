@@ -8,7 +8,7 @@ const Column = (props:{
   // grid: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 }) => {
   return (
-    <div className={`ex-column ${props.className}`}>
+    <div className={`sam-column ${props.className}`}>
         {props.children}
     </div>
   )

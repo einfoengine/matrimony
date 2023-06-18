@@ -22,29 +22,30 @@ const Dashboard = () => {
       }
     },[state?.user?._id]);
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-2">
-            <SideMenu active={"message"}/>
-          </div>
-          <div className="col-md-10">
-            <div className="row">
-              <div className="col-md-9">
-                <div className="bd-component">
-                  <h3>Liked</h3>
-                  <div>
-                    {user !== (null || undefined)&&
-                    <RenderUsers users={user} showLike={false} showMessage={true} showBio={true} handleLike={()=>{console.log("No like")}}/>                    } 
+      <section className="sam-section">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-2">
+              <SideMenu active={"message"}/>
+            </div>
+            <div className="col-md-10">
+              <div className="row">
+                <div className="col-md-9">
+                  <div className="bd-component">
+                    <div>
+                      {user !== (null || undefined)&&
+                      <RenderUsers users={user} showLike={false} showMessage={true} showBio={true} handleLike={()=>{console.log("No like")}}/>                    } 
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-md-3">
-                <h3>New Messages</h3>
+                <div className="col-md-3">
+                  <h3>New Messages</h3>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     )
   }
 

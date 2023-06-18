@@ -26,7 +26,6 @@ const User = ({data}) => {
     {
       id:"sam-bio-brif",
       name: "ex-registratio",
-      className: "no-padding",
       type: "fixed",
       rows: [
           {

@@ -30,9 +30,9 @@ const Hero = ({
     return (
       <div className={`ex-element ex-banner ${className}`} style={{backgroundImage: `url(${background.default.src})`}}>
         <div className={childWrapClass} style={{backgroundColor: colorOverly}}>
-          <h3 className='ex-jumbotron-title ex-text-white'>{title}</h3>
-          <h4 className='ex-jumbotron-sub-title ex-text-dal-white'>{subTitle}</h4>
-          <p className='ex-jumbotron-paragraph ex-text-dal-white'>{text}</p>        
+          <h3 className='sam-jumbotron-title ex-text-white'>{title}</h3>
+          <h4 className='sam-jumbotron-sub-title ex-text-dal-white'>{subTitle}</h4>
+          <p className='sam-jumbotron-paragraph ex-text-dal-white'>{text}</p>        
           {state.user
           ?
           <Link href={`/biodata/?user=${state.user._id}`}>

@@ -38,11 +38,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <div className="body">
         <LoginProvider>
-          <Section id='ex-top' className='ex-top no-padding' container='fixed'>
-            <Row id='ex-row-top' className='align-items-center'>
+          <Section id='sam-top' className='sam-top no-padding' container='fixed'>
+            <Row id='sam-row-top' className='align-items-center'>
               <Col className="col-2">
                 <span>
-                  +8801714028277
+                  +8801714028277 
                 </span>
               </Col>
               <Col className="col-6">
@@ -51,7 +51,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 </span>
               </Col>
               <Col className="col-4">
-                <div className="sam-social-links">
+                <div className="sam-social-links d-flex">
                   Find us on: 
                   <a href="www.facebook.com">
                     <FontAwesomeIcon className="sam-top-social-icon" icon={faFacebook} />
@@ -68,7 +68,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 </div>
               </Col>
             </Row>
-            <Row id='ex-row-top' className='align-items-center'>
+            <Row id='sam-row-top' className='align-items-center'>
               <Col className='col-2'>
                 <Link href={'/'}><a><h1>Pakhi Bhai</h1></a></Link>
               </Col>
@@ -85,8 +85,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         </LoginProvider>
         
         {/* Footer */}
-        <Section id='ex-sec-footer' className='ex-section ex-sec-footer' container='fixed'>
-          <Row id='ex-row-footer-1' className='ex-row-footer-1 ex-row'>
+        <Section id='ex-sec-footer' className='sam-section ex-sec-footer' container='fixed'>
+          <Row id='sam-row-footer-1' className='sam-row-footer-1 sam-row'>
             <Col className='col-3'>
               <Logo text='Pakhi Bhai'/>
               <Paragraph>

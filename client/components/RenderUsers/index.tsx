@@ -70,32 +70,32 @@ const RenderUsers = ({users, showLike, showMessage, showBio, liked}:{liked: any,
                 <div>Lives in - {e?.city}</div>
                 <div>Religion - {e?.religion}</div>
                 {status?.status==='verified' && <div>Email - {e?.user_name}</div>}
-              </div>
-              {
-                showLike===true
-                &&
-                <>
-                  {/* hi */}
-                  <button type='button' className={`sam-btn-like ${liked?.includes(e._id)&&'sam-liked'}`} onClick={()=>{handleLike(e?._id)}}>
-                      {/* like */}
-                      <FontAwesomeIcon icon={faHeart} className='sam-icon'/>
-                  </button>
-                </>
-              }
-              {
-                showMessage===true
-                &&
-                <Link href={
-                  {
-                    pathname: "/message/compose",
-                    query: {
-                      receiver: e._id,
+                {
+                  showLike===true
+                  &&
+                  <>
+                    {/* hi */}
+                    <button type='button' className={`sam-btn-like ${liked?.includes(e._id)&&'sam-liked'}`} onClick={()=>{handleLike(e?._id)}}>
+                        {/* like */}
+                        <FontAwesomeIcon icon={faHeart} className='sam-icon'/>
+                    </button>
+                  </>
+                }
+                {
+                  showMessage===true
+                  &&
+                  <Link href={
+                    {
+                      pathname: "/message/compose",
+                      query: {
+                        receiver: e._id,
+                      }
                     }
-                  }
-                }>
-                  <a className='btn btn-primary'>Send Message</a>
-                </Link>
-              }
+                  }>
+                    <a className='btn btn-primary'>Send Message</a>
+                  </Link>
+                }
+              </div>
             </figure>
           </div>
         )
