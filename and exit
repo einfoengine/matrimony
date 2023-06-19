@@ -1,0 +1,40 @@
+Several changes:
+- Advance search
+- Bio brief
+- Redirect to biodata page after editing it
+- Registration
+- Gallery
+- Navigation
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Your branch is up to date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   components/AdvanceSearch/index.tsx
+#	modified:   components/BioBrif/index.tsx
+#	modified:   components/Biodata/create.tsx
+#	modified:   components/LoginForm/index.tsx
+#	modified:   components/ProfileBrief/index.tsx
+#	modified:   components/Registration/index.tsx
+#	modified:   components/RenderUsers/index.tsx
+#	modified:   components/UserGallery/index.tsx
+#	modified:   components/UserNav/index.tsx
+#	modified:   context/index.js
+#	modified:   package-lock.json
+#	modified:   package.json
+#	modified:   pages/biodata/create.tsx
+#	modified:   pages/dashboard/index.tsx
+#	modified:   pages/gallery/index.tsx
+#	modified:   pages/message/index.tsx
+#	modified:   pages/users/[id].tsx
+#	modified:   pages/users/gallery/[id].tsx
+#	modified:   pages/users/index.tsx
+#	modified:   styles/style.scss
+#	modified:   yarn.lock
+#
+# Changes not staged for commit:
+#	modified:   ../server/uploads/images/avatar64446372da37321a1cbeef69.jpg
+
