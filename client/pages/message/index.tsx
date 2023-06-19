@@ -21,7 +21,8 @@ const Message = (props) => {
   }, [state.user]);
   
   return (
-    <div className="container">
+    <section className="sam-section">
+      <div className="container">
         <div className="row">
             {/* Left */}
           <div className="col-md-2">
@@ -84,6 +85,7 @@ const Message = (props) => {
           </div>
         </div>
       </div>
+    </section>
     )
 }
 export default Message

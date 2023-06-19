@@ -177,7 +177,7 @@ const AdvanceSearch = ({className}:{className?:string | null}) => {
                     {
                         state.user?
                         <Link href={{pathname: `/search/`, query: params}}>
-                            <button type="submit" className="btn btn-primary mt-4" onClick={(e)=>{console.log("Submitted", params)}}>Submit</button>
+                            <button type="submit" className="btn btn-primary mt-4">Submit</button>
                         </Link> :
                         <>
                             <a type="submit" className="btn btn-primary mt-4" onClick={notify}>Submit</a>

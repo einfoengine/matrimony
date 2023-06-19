@@ -7,8 +7,6 @@ import Default from "../../Layouts/Default.layout";
 
 export async function getServerSideProps (req, res) { 
   const {data} = await axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/api/user/biodata`, {params: {user: req.query.id}});
-  console.log('Data ***> ',data);
-  
   return {
     props: {
      data

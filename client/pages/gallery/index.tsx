@@ -42,13 +42,13 @@ const Gallery = () => {
         {
           cols: [
             {
-              span: 4,
+              span: 2,
               components: <>
               <SideMenu active={"message"}/>
               </>
             },
             {
-              span: 8,
+              span: 10,
               components: <>
                 <ImageUploader/>
                 <UserGallery data={data.data} self={true}/>

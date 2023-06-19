@@ -11,17 +11,19 @@ import lgZoom from 'lightgallery/plugins/zoom';
 
 const UserGallery = ({gallery_title, data={}, self=false}:{gallery_title:any, data: any, self: boolean}) => {
   return (
-    <div className="sam-gallery">
-      <h3>{gallery_title?gallery_title:"Gallery"}</h3>
-      <LightGallery speed={500} plugins={[lgThumbnail, lgZoom]}>
-        {data?.images?.map((image, index) => (
-          <div href={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/static/gallery/${data?.images[index]}`} key={'user-gallery-' + index}>
-            {self===true&&"delete"}
-            <img src={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/static/gallery/${data?.images[index]}`} alt={``}/>
-          </div>
-        ))}
-      </LightGallery>
-    </div>
+    <>
+      <h3 className=''>{gallery_title?gallery_title:"Gallery"}</h3>
+      <div className="sam-gallery">
+        <LightGallery speed={500} plugins={[lgThumbnail, lgZoom]}>
+          {data?.images?.map((image, index) => (
+            <div className='sam-gallery-item' href={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/static/gallery/${data?.images[index]}`} key={'user-gallery-' + index}>
+              {self===true&&"delete"}
+              <img src={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/static/gallery/${data?.images[index]}`} alt={``}/>
+            </div>
+          ))}
+        </LightGallery>
+      </div>
+    </>
   )
 }
 

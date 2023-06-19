@@ -34,7 +34,7 @@ const LoginForm = () => {
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="ex-login-id" className="form-label">Email address</label>
-                    <input type="email" className="form-control ex-regirtration-name" id="ex-login-id" aria-describedby="ex-regirtration-name" onChange={(e)=>{setUserName(e.target.value); console.log(state)}}/>
+                    <input type="email" className="form-control ex-regirtration-name" id="ex-login-id" aria-describedby="ex-regirtration-name" onChange={(e)=>{setUserName(e.target.value)}}/>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="sam-registration-password" className="form-label">Password</label>

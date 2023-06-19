@@ -45,7 +45,6 @@ const Gallery = ({data}) => {
                           </a>
                         ))}
                       </LightGallery> */}
-                      {/* {console.log("Image data --- ",data)} */}
                       <UserGallery data={data}/>
                     </div>
                   },
@@ -56,7 +55,6 @@ const Gallery = ({data}) => {
   ]
   console.log("Data for gallery: ",data);
   return (
-    console.log("Gallery data ",data),
     <div>
         <Default layoutPayload={payload}/>
     </div>

@@ -30,7 +30,6 @@ const LoginProvider = ({children}) => {
 
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem("user"));
-        // console.log("User ** ", user);
         if (user?.token){
             dispatch({
                 type: 'login',

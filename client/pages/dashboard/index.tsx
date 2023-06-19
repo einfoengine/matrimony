@@ -10,7 +10,6 @@ const Dashboard = () => {
     const {state} = useContext(LoginContext);
     const ctx = useContext(LoginContext);
     useEffect(()=>{
-      console.log("CTX state",ctx);
       if(state.user){
         try {
           axios.get('/api/users/liked/', {params: {user: state.user._id}}).then((res)=>{
@@ -34,7 +33,7 @@ const Dashboard = () => {
                   <div className="bd-component">
                     <div>
                       {user !== (null || undefined)&&
-                      <RenderUsers users={user} showLike={false} showMessage={true} showBio={true} handleLike={()=>{console.log("No like")}}/>                    } 
+                      <RenderUsers users={user} showLike={false} showMessage={true} showBio={false} handleLike={()=>{console.log("No like")}}/>                    } 
                     </div>
                   </div>
                 </div>

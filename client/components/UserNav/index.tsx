@@ -35,7 +35,6 @@ const Login = () => {
           state.user
           ?
           <div className="d-flex">
-          {console.log(state.user )}
             <img src={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_HOST}/static/images/${profilePic}`} layout='responsive' width={50} height={50} style={{marginRight: "10px", borderRadius: "50px", background: "rgba(255,255,255,0.2)", padding: "2px"}}/>
             <div className="dropdown">
               <a className="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{user.name}</a>

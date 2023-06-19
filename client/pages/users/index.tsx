@@ -16,7 +16,15 @@ const Users = () => {
   useEffect(()=>{
     axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_CLIENT_PORT}/api/users`, { withCredentials: true }).then((res)=>{
       const users = res.data;
-      setUsers(users);
+      users.map((user:object, index:number)=>{
+        console.log(user);
+        axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/api/user/biodata`, {params: {user: user._id}}).then((res)=>{
+          users[index].about = res.data.about;
+        })
+        .then(()=>{
+          setUsers(users);
+        });
+      });
     });
     if(state.user){
       try {
@@ -30,7 +38,6 @@ const Users = () => {
   },[state]);
   
   if(users){
-    console.log("Liked:", liked);
     const likedIds = liked?.map((e)=>{
       return e._id
     })
@@ -46,7 +53,7 @@ const Users = () => {
               {
                 components: <>
                   <h4>All users</h4>
-                  <RenderUsers users={users} liked={likedIds} showLike={true}/>
+                  <RenderUsers showBio={true} users={users} liked={likedIds} showLike={true}/>
                 </>
               },
             ]
@@ -60,6 +67,10 @@ const Users = () => {
           <Default layoutPayload={payload}/>
         </div>
       </section>
+    )
+  }else{
+    return(
+      <h3>Users not found!</h3>
     )
   }
 }

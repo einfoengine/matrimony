@@ -8,17 +8,15 @@ import jwt_decode from "jwt-decode";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
-const RenderUsers = ({users, showLike, showMessage, showBio, liked}:{liked: any, user:any, users:any, handleLike: any, showLike: true|false, showMessage: true|false, showBio: true|false}) => {
+const RenderUsers = ({users, showLike, showMessage, showBio=false, liked}:{liked: any, user:any, users:any, handleLike: any, showLike: true|false, showMessage: true|false, showBio: true|false}) => {
   const [status, setStatus]=useState();
   const [slide, setSlide]=useState({state: "closed"})
-  const [likedUsers , setLikedUsers] = useState();
   const d = new Date();
   let y = d.getFullYear();
 
   useEffect(()=>{
     const token = jwt_decode(JSON.parse(window.localStorage.getItem("user")).token)
     setStatus(token);
-    console.log("token ", token);
   },[]);
 
   const handleLike = async (e:any) => {
@@ -70,6 +68,7 @@ const RenderUsers = ({users, showLike, showMessage, showBio, liked}:{liked: any,
                 <div>Lives in - {e?.city}</div>
                 <div>Religion - {e?.religion}</div>
                 {status?.status==='verified' && <div>Email - {e?.user_name}</div>}
+                {(status?.status==='verified' && showBio===true) && <div>{e?.about} </div>}
                 {
                   showLike===true
                   &&

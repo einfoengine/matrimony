@@ -16,12 +16,9 @@ const BioBrief = ({user}:{user:object}) => {
 
   useEffect(()=>{
     const data = axios.get(`/api/users/user/${user}`).then((res)=>{
-      console.log(res?.data)
       setUserDetails(res?.data);
       setProfilePic(res?.data?.avatar);
     });
-    console.log("User Details ", userDetails);
-    console.log("User ", user);
   },[user]);
 
   const handleSubmit = async (e) =>{

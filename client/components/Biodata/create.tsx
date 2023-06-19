@@ -25,7 +25,6 @@ const CreateBiodata = ({bio, userId}:{bio: object | null, userId: any}) => {
         try {
             const response = await axios.post('/api/user/biodata',{user: userId , present_address, parmenent_address, city, educaton, profession, fathers_name, fathers_profession, mothers_name, mothers_profession, parents_profession, relative, syblings, seeking, about});
             router.push(`/biodata?user=${userId}`);
-            console.log("Bio response", response);
         } catch (err) {
             alert("Something wrong! Biodata create/edit error: ");
             console.log(err);
