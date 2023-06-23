@@ -5,6 +5,7 @@ import VerificationReport from '../models/VerificationReport.js';
 import multer from 'multer';
 import path from 'path';
 import jwtDecode from 'jwt-decode';
+import fs from 'fs';
 
 const {ObjectId} = mongoose.Types;
 
@@ -195,6 +196,28 @@ export const UploadImages = async(req, res)=>{
         res.send(err);
     }
 }
+
+export const deleteImage = async (req, res)=>{
+    try {
+        const {fileName} = req.params;
+        const imagePath = `./uploads/images/${fileName}`;
+
+        fs.unlink(imagePath, (err)=>{
+            if(err){
+                console.log("Image deletation error: ", err);
+                return res.status(500).send('Failed to delete image');
+            }
+            res.send('Image deleted successfully');
+        })
+    } catch (error) {
+        
+    }
+}
+
+
+// export const DeleteImages = async(req, res)=>{
+//     const result = await
+// }
 
 export const ShowImages = async(req, res)=>{
     

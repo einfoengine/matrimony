@@ -3,13 +3,24 @@ import multer from 'multer';
 import path from 'path';
 import jwt_decode from "jwt-decode";
 
-
 // Conntrollers
-import {Register, Login, Logout} from '../../controllers/auth.js';
-import {GetUsers, GetUser, SetLike, GetLiked, RemoveUser, Uploadavatar, UploadImages, GetUserGallery, SetVerify, GetRecentUsers} from '../../controllers/users.js';
-import { nextTick } from "process";
-
-// app.use(express.static('upload'));
+import {
+    Register, 
+    Login, 
+    Logout
+} from '../../controllers/auth.js';
+import {
+    GetUsers, 
+    GetUser, 
+    SetLike, 
+    GetLiked, 
+    RemoveUser, 
+    Uploadavatar, 
+    UploadImages, 
+    GetUserGallery, 
+    SetVerify, 
+    GetRecentUsers
+} from '../../controllers/users.js';
 
 // Middlewares
 const router = express.Router();
@@ -87,27 +98,27 @@ const UploadGallery = multer({
 
 
 // Create
-// Res or Auth
 router.post('/registration', Register);
 router.post('/user/avatar', upload, Uploadavatar);
 router.post('/user/gallery', UploadGallery, UploadImages);
 router.post('/login', Login);
-router.get('/logout', Logout);
 
-// Get users
+// Get 
+router.get('/logout', Logout);
 router.get('/user/:id', GetUser);
 router.get('/', GetUsers);
 router.get('/recent', GetRecentUsers);
 router.get('/liked', GetLiked);
 router.get('/gallery', GetUserGallery);
 
-// Update user
+// Update 
 router.put('/like', SetLike);
 router.put('/verify', SetVerify);
 // router.put('/active/:id', );
 
 
-// Remove user
+// Remove 
 router.delete('/user/:id', RemoveUser);
+router.delete('/gallery/:image');
 
 export default router;

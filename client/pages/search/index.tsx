@@ -7,7 +7,7 @@ import RenderUsers from '../../components/RenderUsers';
 
 const UsersBySearch = ({users}) => {
   return (
-    <section id='sam-search' className='sam-search'>
+    <section id='sam-search' className='sam-search sam-section'>
       <div className="sam-container container">
         <RenderUsers users={users}/>
       </div>
