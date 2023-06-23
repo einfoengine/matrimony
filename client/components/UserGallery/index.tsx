@@ -16,14 +16,13 @@ import Link from 'next/link';
 
 
 const UserGallery = ({gallery_title="gallery", images={}, self=false}:{gallery_title:any, images: any, self: boolean}) => {
-  console.log(images);
+  console.log(self);
   return (
     <>
       <h3 className=''>{gallery_title}</h3>
       {
         self===true
         &&
-        
         <div className="row">
           <div className="col-12 d-flex">
             <ImageUploader />

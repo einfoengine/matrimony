@@ -46,7 +46,7 @@ const Gallery = (): JSX.Element => {
               span: 10,
               components: (
                 <>
-                  <UserGallery images={images} gallery_title="Images" self={false} /> {/* Pass 'images' as prop */}
+                  <UserGallery images={images} gallery_title="Images" self={false} />
                 </>
               ),
             },

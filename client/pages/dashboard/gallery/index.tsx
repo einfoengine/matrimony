@@ -18,8 +18,9 @@ const Gallery = (): JSX.Element => {
     try {
       const currentUser = JSON.parse(window.localStorage.getItem('user'));
       const fetchData = async () => {
-        const {data} = await axios.get('/api/users/gallery', {params: {id: currentUser._id}})
+        const {data} = await axios.get('/api/users/gallery', {params: {id: currentUser._id}});
         setData(data);
+        setImages(data?.images);
       }
       fetchData();
     } catch (error) {
@@ -27,9 +28,6 @@ const Gallery = (): JSX.Element => {
     }
   }, []);
   
-  useEffect(()=>{
-    setImages(data?.images);
-  },[data]);
   console.log("Images: ", images);
   
   const payload = [
@@ -47,10 +45,7 @@ const Gallery = (): JSX.Element => {
             {
               span: 10,
               components: (
-                <>
-                  <UserGallery images={images} gallery_title={"Images"} self={false} />
-                  {/* {console.log("Data", data?.images)} */}
-                </>
+                  <UserGallery images={images} gallery_title={"Images"} self={true} />
               ),
             },
           ],
