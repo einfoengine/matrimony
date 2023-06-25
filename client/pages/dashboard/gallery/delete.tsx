@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import SideMenu from '../../../components/SideMenu';
-import UserGallery from '../../../components/UserGallery';
-import ImageUploader from '../../../components/ImageUploader';
 import Default from '../../../Layouts/Default.layout';
+import DeleteImage from '../../../components/DeleteImage';
 
 interface GalleryData {
   id: string;
@@ -46,7 +45,7 @@ const Gallery = (): JSX.Element => {
               span: 10,
               components: (
                 <>
-                  <UserGallery images={images} gallery_title="Images" self={false} />
+                  <DeleteImage images={images} gallery_title="Images" self={false} />
                 </>
               ),
             },

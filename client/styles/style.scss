@@ -81,6 +81,13 @@ a{
 .sam-menu-dropdown{
     cursor: pointer;
 }
+
+.sam-pull-title{
+    margin-top: -65px;
+}
+.sam-left-auto{
+    margin-left: auto;
+}
 // Elements/module
 // ---------------
 .sam-cta{
@@ -158,7 +165,16 @@ a{
     background-color: $theme-secondary;
 }
 
+// DeleteGallery
+.sam-image-slected{
+    border: 3px solid rgba($black, 0);
+    box-shadow: 0 0 0 3px rgba($color: $theme-secondary, $alpha: 0.5);
+    overflow: hidden;
+    > *{filter: blur(5px)};
+}
+
 // Sections
+// =================
 .sam-section{
     padding-top: $section-padding;
     padding-bottom: $section-padding;

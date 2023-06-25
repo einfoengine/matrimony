@@ -15,7 +15,7 @@ import lgZoom from 'lightgallery/plugins/zoom';
 import Link from 'next/link';
 
 
-const UserGallery = ({gallery_title="gallery", images={}, self=false}:{gallery_title:any, images: any, self: boolean}) => {
+const UserImageList = ({gallery_title="gallery", images={}, self=false}:{gallery_title:any, images: any, self: boolean}) => {
   console.log(self);
   return (
     <>
@@ -26,7 +26,7 @@ const UserGallery = ({gallery_title="gallery", images={}, self=false}:{gallery_t
         <div className="row">
           <div className="col-12 d-flex">
             <ImageUploader />
-            <Link href={`/gallery/delete?id=${"data"}`} passHref>
+            <Link href={`/dashboard/gallery/delete`} passHref>
               <button className='btn btn-primary'>Delete</button>
             </Link>
           </div>
@@ -45,4 +45,4 @@ const UserGallery = ({gallery_title="gallery", images={}, self=false}:{gallery_t
   )
 }
 
-export default UserGallery
+export default UserImageList
