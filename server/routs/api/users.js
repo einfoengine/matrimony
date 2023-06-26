@@ -19,7 +19,8 @@ import {
     UploadImages, 
     GetUserGallery, 
     SetVerify, 
-    GetRecentUsers
+    GetRecentUsers,
+    deleteImage
 } from '../../controllers/users.js';
 
 // Middlewares
@@ -119,6 +120,6 @@ router.put('/verify', SetVerify);
 
 // Remove 
 router.delete('/user/:id', RemoveUser);
-router.delete('/gallery/:image');
+router.delete('/gallery/delete', deleteImage);
 
 export default router;

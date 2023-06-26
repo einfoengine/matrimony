@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const DeleteImage = ({gallery_title="gallery", images={}, self=false}:{gallery_title:any, images: any, self: boolean}) => {
+const DeleteImage = ({gallery_title="gallery", images={}}:{gallery_title:any, images: any, self: boolean}) => {
   const [selectedImages, setSelectedImages] = useState([]);
 
   const toggleImageSelection = (imageId) => {
@@ -15,6 +15,16 @@ const DeleteImage = ({gallery_title="gallery", images={}, self=false}:{gallery_t
     })
   };
 
+  const handleDelete = async () => {
+    try {
+      axios.delete(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/api/users/gallery/delete`, {
+        data:{selectedImages}
+      });
+    } catch (err) {
+      console.log("delete error: ", err);
+    }
+  }
+
   useEffect(()=>{
 
   },[]);
@@ -24,7 +34,7 @@ const DeleteImage = ({gallery_title="gallery", images={}, self=false}:{gallery_t
     {console.log(selectedImages)}
     <div className="sam-module-header d-flex mb-3 sam-pull-title">
       <h3 className=''>{gallery_title}</h3>
-      <button className="btn btn-primary sam-left-auto">Delete</button>
+      <button className="btn btn-primary sam-left-auto" onClick={handleDelete}>Delete</button>
     </div>
       <div className="sam-gallery">
         <div className="sam-user-image-list">

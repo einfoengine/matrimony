@@ -45,7 +45,7 @@ const Gallery = (): JSX.Element => {
               span: 10,
               components: (
                 <>
-                  <DeleteImage images={images} gallery_title="Images" self={false} />
+                  <DeleteImage images={images} gallery_title="Images" />
                 </>
               ),
             },

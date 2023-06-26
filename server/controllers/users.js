@@ -199,9 +199,8 @@ export const UploadImages = async(req, res)=>{
 
 export const deleteImage = async (req, res)=>{
     try {
-        const {fileName} = req.params;
-        const imagePath = `./uploads/images/${fileName}`;
-
+        const {selectedImages} = req.body;
+        const imagePath = `../uploads/gallery/${selectedImages}`;
         fs.unlink(imagePath, (err)=>{
             if(err){
                 console.log("Image deletation error: ", err);
@@ -209,8 +208,10 @@ export const deleteImage = async (req, res)=>{
             }
             res.send('Image deleted successfully');
         })
-    } catch (error) {
-        
+        console.log("Image delete ", selectedImages);
+        res.send("Image deleted");
+    } catch (err) {
+        console.log(err);
     }
 }
 
