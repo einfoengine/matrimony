@@ -4,8 +4,13 @@ import Gallery from '../models/Gallery.js';
 import VerificationReport from '../models/VerificationReport.js';
 import multer from 'multer';
 import path from 'path';
+import { dirname } from 'path';
 import jwtDecode from 'jwt-decode';
 import fs from 'fs';
+
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const {ObjectId} = mongoose.Types;
 
@@ -197,23 +202,31 @@ export const UploadImages = async(req, res)=>{
     }
 }
 
-export const deleteImage = async (req, res)=>{
-    try {
-        const {selectedImages} = req.body;
-        const imagePath = `../uploads/gallery/${selectedImages}`;
-        fs.unlink(imagePath, (err)=>{
-            if(err){
-                console.log("Image deletation error: ", err);
-                return res.status(500).send('Failed to delete image');
-            }
-            res.send('Image deleted successfully');
-        })
-        console.log("Image delete ", selectedImages);
-        res.send("Image deleted");
-    } catch (err) {
-        console.log(err);
-    }
-}
+export const deleteImage = async (req, res) => {
+  try {
+    const { selectedImages } = req.body;
+    console.log(selectedImages);
+    selectedImages.map((item, index)=>{
+        const imagePath = path.join(__dirname, '..', 'uploads', 'gallery', item);
+        // console.log(path.join(__dirname,"..", 'uploads', 'gallery', item));
+        fs.unlink(imagePath, (err) => {
+          if (err) {
+            console.log('Image deletion error:', err);
+            return res.status(500).send('Failed to delete image');
+          }
+          res.send('Image deleted successfully');
+        });
+    });
+
+    // console.log('Image delete', selectedImages);
+    // Note: It's generally not necessary to send a response multiple times.
+    // You may want to remove the line below.
+    // res.send('Image deleted');
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 
 
 // export const DeleteImages = async(req, res)=>{
