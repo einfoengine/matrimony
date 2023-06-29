@@ -40,3 +40,9 @@ yarn-error.log*
 *.jpeg
 *.png
 *.gif
+.jpeg
+.jpg
+.png
+.gif
+/gallery
+*/gallery
