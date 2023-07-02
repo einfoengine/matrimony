@@ -27,9 +27,9 @@ const MainNav = () => {
         {/* {state.user?.biodata === "complete" && <Link href={'/users'}><a className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Users</a></Link>} */}
         {
           user?._id?
-          <Link href={'/users'}><a className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">See biodatas</a></Link>
+          <Link href={'/users'}><a className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Find partner</a></Link>
           :
-          <a onClick={notify} className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">See biodatas</a>
+          <a onClick={notify} className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Find partner </a>
         }
       </nav>
       <ToastContainer />

@@ -32,7 +32,7 @@ h2{
 }
 a{
     &:hover{
-        color: $theme-secondary !important;
+        color: $theme-secondary;
     }
 }
 
@@ -40,7 +40,7 @@ a{
     transition: all 0.05s;
 }
 
-// Ex-Helper
+// Sam-Helper
 .sam-jumbotron{
     padding: $section-padding 0;
 }
@@ -50,11 +50,7 @@ a{
 .sam-bg-primary-gradiant{
     @include gradiant-bg($orange-red, $purple-red )
 }
-.theme-grid{
-    display: grid;
-    grid-template-columns: auto auto auto auto 130px;
-    gap: 20px;
-}
+
 .theme-flex-4{
     display: flex;
     flex-direction: column;
@@ -73,23 +69,30 @@ a{
     grid-template-columns: auto auto auto auto;
     gap: 20px;
 }
-.sam-top-social-icon{
-    max-width: 20px;
-    margin-left: 10px;
-}
-
-.sam-menu-dropdown{
-    cursor: pointer;
-}
-
 .sam-pull-title{
     margin-top: -65px;
 }
 .sam-left-auto{
     margin-left: auto;
 }
+.sam-form-vertical, .sam-form-vertical form{
+    display: flex;
+    width: 100%;
+    .sam-form-item{
+        flex-grow: 1;
+        flex-basis: 0;
+        margin: 0 10px;
+    }
+}
 // Elements/module
 // ---------------
+.sam-menu-dropdown{
+    cursor: pointer;
+}
+.sam-top-social-icon{
+    max-width: 20px;
+    margin-left: 10px;
+}
 .sam-cta{
     .sam-sub-heading{
         color: $white;
@@ -229,7 +232,7 @@ h4.sam-jumbotron-sub-title.ex-text-dal-white{
     color: $theme-secondary;
 }
 // eie-advanced-search
-.eie-advanced-search{
+.sam-advanced-search{
     background: $white;
     color: $theme-primary;
     margin-top: -160px !important;
@@ -268,15 +271,17 @@ h4.sam-jumbotron-sub-title.ex-text-dal-white{
     }
 }
 .btn-primary{
-    // background-image: linear-gradient(to right, $orange-red, $purple-red);
-    background: #FF605A;
-    border: 0 none;
-    border-radius: 0px;
-    // box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    background-image: linear-gradient(to right, $orange-red, $purple-red);
+    background-color: transparent;
+    // background: #FF605A;
+    border: 1px solid $theme-secondary;
+    // border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
     &:hover{
-        // background: #E94822;
-        border-color: #ffffff;
-        box-shadow: 0 0 2px rgba(0,0,0,0.3);
+        border: 1px solid $theme-secondary;
+        background-image: linear-gradient(to right, $purple-red, $orange-red);
+        color: $white;
+        box-shadow: 0 0 40px rgba(0,0,0,0.3);
     }
 }
 .modal-header{
@@ -289,7 +294,6 @@ h4.sam-jumbotron-sub-title.ex-text-dal-white{
     border-radius: 0%;
 }
 .form-select{
-    border-radius: 0 !important;
     height: 50px;
 }
 /* Page spesific */

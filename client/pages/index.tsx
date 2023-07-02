@@ -52,7 +52,7 @@ const payload:layoutPayload = [
         cols:[
           {
             className: '',
-            components: <AdvanceSearch className='eie-advanced-search rounded p-3 mt-4'/>
+            components: <AdvanceSearch className='sam-advanced-search rounded p-3 mt-4 sam-form-vertical'/>
           },
         ]
       },
@@ -108,9 +108,9 @@ const payload:layoutPayload = [
 const Home: NextPage = () => {
   
   return (
-    <div>
+    // <div>
       <Default layoutPayload = {payload}/> 
-    </div>
+    // </div>
   )
 }
 

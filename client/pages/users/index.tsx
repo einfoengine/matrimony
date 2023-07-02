@@ -3,6 +3,7 @@ import RenderUsers from '../../components/RenderUsers';
 import { useContext, useEffect, useState } from 'react';
 import { LoginContext } from '../../context';
 import RecomendedUsers from '../../components/RecomendedUsers';
+import AdvanceSearch from '../../components/AdvanceSearch';
 
 import Default from '../../Layouts/Default.layout';
 
@@ -43,16 +44,25 @@ const Users = () => {
     })
     const payload:layoutPayload = [
       {
-        id:'hero',
-        name: "hero",
-        className: "no-padding",
-        type: 'fluid',
+        // id:'hero',
+        name: "main-content",
+        // className: "",
+        type: 'fixed',
         rows: [
           {
             cols:[
               {
+                span: 3,
+                className:"sam-side-bar",
                 components: <>
-                  <h4>All users</h4>
+                  <h4>Filter users</h4>
+                  <AdvanceSearch className={"border rounded p-3"} />
+                </>
+              },
+              {
+                span: 9,
+                components: <>
+                  <h4>Recomended users</h4>
                   <RenderUsers showBio={true} users={users} liked={likedIds} showLike={true}/>
                 </>
               },
@@ -62,11 +72,7 @@ const Users = () => {
       }
     ]
     return (
-      <section id="sam-users" className="sam-users sam-section">
-        <div className='container'>
-          <Default layoutPayload={payload}/>
-        </div>
-      </section>
+      <Default layoutPayload={payload}/>
     )
   }else{
     return(
