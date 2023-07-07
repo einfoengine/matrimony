@@ -39,10 +39,7 @@ const Gallery = ({ data }: { data: any }) => {
           cols: [
             {
               span: 12,
-              components:
-                <div className="sam-gallery">
-                  <UserGallery images={images} gallery_title={"Images"} self={false} />
-                </div>
+              components: <UserGallery images={images} gallery_title={"Images"} self={false} />
             },
           ]
         }

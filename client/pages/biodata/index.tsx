@@ -37,12 +37,18 @@ const Biodata = ({data, userId}:{data: object, userId: object}) => {
                   },
                   {
                     span: 8,
-                    components: <>
+                    components: <div className="sam-bio-wrapper">
+                      <div className="sam-tab-nav mb-3">
+                        <button className="btn btn-info">Information</button>
+                        <Link href={`/users/gallery/${userId}`}>
+                          <button className="btn btn-light">Gallery</button>
+                        </Link>
+                        <Link href={`/biodata/create/?user=${userId}`}>
+                          <a className="btn btn-danger">Edit</a>
+                        </Link>
+                      </div>
                       <BiodataForm bio={data} userId={userId}/>
-                      <Link href={`/biodata/create/?user=${userId}`}>
-                        <a className="btn btn-info">Edit</a>
-                      </Link>
-                    </>
+                    </div>
                   }
               ]
           }
@@ -52,7 +58,7 @@ const Biodata = ({data, userId}:{data: object, userId: object}) => {
  
   
   return (
-    <div className="ex-page">
+    <div className="sam-page sam-page-bio">
       <Default layoutPayload = {payload}/>
     </div>
   )

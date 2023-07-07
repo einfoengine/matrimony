@@ -1,7 +1,8 @@
 import {BsHouses} from 'react-icons/bs';
 const Biodata = ({bio}:{bio: object | null, userId: any}) => {    
   return (
-    <div className="sam-component">  
+    <div className="sam-component sam-bio-details">
+        
         <div className="border rounded p-3 mb-3 pt-2 pb-2 mt-0">
             <h4>About me</h4>
             <span>{bio?.about}</span>
