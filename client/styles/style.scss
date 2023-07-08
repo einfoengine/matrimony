@@ -105,7 +105,7 @@ a{
     }
 }
 // Bio brief
-.sam-bio-brif{
+.sam-profile-brif{
     img{
         margin-right: 10px;
         width: 100%;
@@ -120,6 +120,11 @@ a{
             padding: 4px 8px;
             font-size: 11px;
         }
+    }
+    canvas{
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 4px;
     }
 }
 // User
@@ -301,7 +306,7 @@ h4.sam-jumbotron-sub-title.ex-text-dal-white{
     .sam-tab-nav{
         display: flex;
         justify-content: flex-end;
-        margin-top: -68px;
+        margin-top: -55px;
         .btn {
             margin-left: 10px;
         }
