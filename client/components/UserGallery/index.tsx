@@ -15,10 +15,10 @@ import lgZoom from 'lightgallery/plugins/zoom';
 import Link from 'next/link';
 
 
-const UserImageList = ({gallery_title="gallery", images={}, self=false}:{gallery_title:any, images: any, self: boolean}) => {
+const UserImageList = ({gallery_title="gallery", images={}, self=false, className=''}:{gallery_title:any, images: any, self: boolean, className: string}) => {
   console.log(self);
   return (
-    <>
+    <div className={`sam-component sam-user-gallery ${className}`}>
       <h3 className=''>{gallery_title}</h3>
       {
         self===true
@@ -41,7 +41,7 @@ const UserImageList = ({gallery_title="gallery", images={}, self=false}:{gallery
           )}
         </LightGallery>
       </div>
-    </>
+    </div>
   )
 }
 

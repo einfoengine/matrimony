@@ -203,35 +203,51 @@ export const UploadImages = async(req, res)=>{
 }
 
 export const deleteImage = async (req, res) => {
-  try {
-    const { selectedImages } = req.body;
-    console.log(selectedImages);
-    selectedImages.map((item, index)=>{
+    try {
+      const { selectedImages } = req.body;
+    //   console.log(req.body);
+      
+      const user = req.body.user; 
+      console.log("User: ",user);
+      
+      for (const item of selectedImages) {
+        console.log("Item: ",item);
+        try {
+          const deleteImageResponse = await Gallery.updateOne(
+            { user: user},
+            {
+              $pull: {
+                images: item,
+              },
+            }
+          );
+          console.log("Successful image delete: ", deleteImageResponse);
+        } catch (err) {
+          console.log('Error: Failed to delete image: ', err);
+        }
+        
         const imagePath = path.join(__dirname, '..', 'uploads', 'gallery', item);
-        // console.log(path.join(__dirname,"..", 'uploads', 'gallery', item));
-        fs.unlink(imagePath, (err) => {
-          if (err) {
-            console.log('Image deletion error:', err);
-            return res.status(500).send('Failed to delete image');
-          }
-          res.send('Image deleted successfully');
+        
+        const deleteImagePromise = new Promise((resolve, reject) => {
+          fs.unlink(imagePath, (err) => {
+            if (err) {
+              console.log('Image deletion error:', err);
+              reject(err);
+            }
+            resolve();
+          });
         });
-    });
-
-    // console.log('Image delete', selectedImages);
-    // Note: It's generally not necessary to send a response multiple times.
-    // You may want to remove the line below.
-    // res.send('Image deleted');
-  } catch (err) {
-    console.log(err);
-  }
+        
+        await deleteImagePromise; 
+      }
+      
+      res.send('Images deleted successfully');
+    } catch (err) {
+      console.log(err);
+      res.status(500).send('Failed to delete images');
+    }
 };
 
-
-
-// export const DeleteImages = async(req, res)=>{
-//     const result = await
-// }
 
 export const ShowImages = async(req, res)=>{
     

@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Link from "next/link";
 import Default from "../../Layouts/Default.layout";
 import BiodataForm from "../../components/Biodata/create";
 import BioBrief from "../../components/BioBrif";
 import { layoutPayload } from "../../types/global.type";
 
 const Biodata = ({ data, userId }:{data:object, userId:object}) => {
-  const [user, setUser] = useState<object | null>(userId);
-
   const handlePpSubmit = (e) => {
     e.preventDefault();
     const res = axios.post(
@@ -26,11 +25,21 @@ const Biodata = ({ data, userId }:{data:object, userId:object}) => {
           cols: [
             {
               span: 4,
-              components: <BioBrief user={user} />,
+              components: <BioBrief user={userId} />,
             },
             {
               span: 8,
-              components: <BiodataForm bio={data} userId={userId} />,
+              components: <div className="sam-bio-wrapper">
+              <div className="sam-tab-nav mb-3">
+                <Link href={`/biodata?user=${userId}`} passHref>
+                  <button className="btn btn-info">Biodata</button>
+                </Link>
+                <Link href={`/users/gallery/${userId}`} passHref>
+                  <button className="btn btn-light">Gallery</button>
+                </Link>  
+              </div>
+              <BiodataForm bio={data} userId={userId} />
+            </div>
             },
           ],
         },

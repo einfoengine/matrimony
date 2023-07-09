@@ -18,9 +18,7 @@ export async function getServerSideProps (req, res) {
 }
 
 const Biodata = ({data, userId}:{data: object, userId: object}) => {
-  const [user, setUser] = useState<object|null>(userId);
 
-  const userContext = useContext(LoginContext);
   const payload:layoutPayload = [
     {
       id:"ex-registratio",
@@ -32,14 +30,13 @@ const Biodata = ({data, userId}:{data: object, userId: object}) => {
               cols: [
                   {
                     span: 4,
-                    components: <><ProfileBrief user={user}/></>
-                    // components: <><BioBrief user={user}/></>
+                    components: <ProfileBrief user={userId}/>
                   },
                   {
                     span: 8,
                     components: <div className="sam-bio-wrapper">
                       <div className="sam-tab-nav mb-3">
-                        <button className="btn btn-info">Information</button>
+                        <button className="btn btn-info">Biodata</button>
                         <Link href={`/users/gallery/${userId}`}>
                           <button className="btn btn-light">Gallery</button>
                         </Link>

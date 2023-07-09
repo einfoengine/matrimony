@@ -52,7 +52,7 @@ const Users = () => {
           {
             cols:[
               {
-                span: 3,
+                span: 4,
                 className:"sam-side-bar",
                 components: <>
                   <h4>Filter users</h4>
@@ -60,7 +60,7 @@ const Users = () => {
                 </>
               },
               {
-                span: 9,
+                span: 8,
                 components: <>
                   <h4>Recomended users</h4>
                   <RenderUsers showBio={true} users={users} liked={likedIds} showLike={true}/>

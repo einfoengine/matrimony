@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const DeleteImage = ({gallery_title="gallery", images={}}:{gallery_title:any, images: any, self: boolean}) => {
+const DeleteImage = ({gallery_title="gallery", images={}, user}:{gallery_title:any, images: any, self: boolean, user: any}) => {
   const [selectedImages, setSelectedImages] = useState([]);
 
   const toggleImageSelection = (imageId) => {
@@ -18,7 +18,7 @@ const DeleteImage = ({gallery_title="gallery", images={}}:{gallery_title:any, im
   const handleDelete = async () => {
     try {
       axios.delete(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/api/users/gallery/delete`, {
-        data:{selectedImages}
+        data:{user ,selectedImages}
       });
     } catch (err) {
       console.log("delete error: ", err);

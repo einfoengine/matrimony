@@ -1,0 +1,357 @@
+.modal {
+  color: #101010;
+}
+
+h2 {
+  margin-bottom: 60px;
+}
+
+a:hover {
+  color: #df314d;
+}
+
+* {
+  -webkit-transition: all 0.05s;
+  transition: all 0.05s;
+}
+
+.sam-jumbotron {
+  padding: 90px 0;
+}
+
+.sam-bg-gray {
+  background-color: #606060;
+}
+
+.sam-bg-primary-gradiant {
+  background-image: -webkit-gradient(linear, left top, right top, from(#E94822), to(#C339CE));
+  background-image: linear-gradient(90deg, #E94822, #C339CE);
+}
+
+.theme-flex-4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-height: 1000px;
+}
+
+.theme-flex-4 > div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -ms-flex-preferred-size: fit-content;
+      flex-basis: fit-content;
+  max-width: 30.29%;
+  margin-bottom: 30px;
+}
+
+.theme-grid-4 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
+  gap: 20px;
+}
+
+.sam-pull-title {
+  margin-top: -65px;
+}
+
+.sam-left-auto {
+  margin-left: auto;
+}
+
+.sam-form-vertical, .sam-form-vertical form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.sam-form-vertical .sam-form-item, .sam-form-vertical form .sam-form-item {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+  margin: 0 10px;
+}
+
+.sam-menu-dropdown {
+  cursor: pointer;
+}
+
+.sam-top-social-icon {
+  max-width: 20px;
+  margin-left: 10px;
+}
+
+.sam-cta .sam-sub-heading {
+  color: #ffffff;
+}
+
+.sam-registration span {
+  color: #cccccc;
+}
+
+.sam-profile-brif img {
+  margin-right: 10px;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.sam-profile-brif h4 {
+  text-transform: uppercase;
+}
+
+.sam-profile-brif h4 + button {
+  float: right;
+  padding: 4px 8px;
+  font-size: 11px;
+}
+
+.sam-profile-brif canvas {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 4px;
+}
+
+.sam-user {
+  overflow: hidden;
+}
+
+.sam-user + .sam-user {
+  margin-top: 30px;
+}
+
+.sam-user figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.sam-user .sam-user-info {
+  margin-left: 30px;
+}
+
+.sam-user .sam-verify {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.sam-user .sam-btn-like {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: 0 none;
+  border-radius: 4px;
+}
+
+.sam-user .sam-btn-like .sam-icon {
+  color: #101010;
+  width: 15px;
+}
+
+.sam-users .sam-avatar {
+  width: 300px;
+}
+
+.sam-users figure img {
+  width: 100%;
+  min-height: 400px;
+}
+
+.sam-liked {
+  background-color: #df314d;
+}
+
+.sam-image-slected {
+  border: 3px solid rgba(16, 16, 16, 0);
+  -webkit-box-shadow: 0 0 0 3px rgba(223, 49, 77, 0.5);
+          box-shadow: 0 0 0 3px rgba(223, 49, 77, 0.5);
+  overflow: hidden;
+}
+
+.sam-image-slected > * {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+}
+
+.sam-section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.sam-section.no-padding {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+#sam-section-top svg {
+  width: 20px;
+  display: inline;
+  margin-right: 10px;
+}
+
+.sam-top {
+  background: #ffffff;
+  color: #3a1965;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sam-top .sam-row {
+  padding: 15px 0;
+}
+
+.sam-top .sam-row:first-child {
+  border-bottom: 1px solid rgba(16, 16, 16, 0.1);
+}
+
+.sam-top .sam-column:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+}
+
+.sam-top .sam-column:last-child > div {
+  margin-left: auto;
+}
+
+.sam-top .sam-column:last-child > div > * {
+  min-width: 30px;
+}
+
+#sam-section-hero div.sam-col {
+  padding: 0;
+}
+
+#sam-section-hero .sam-jumbotron {
+  padding: 300px 0;
+}
+
+h3.sam-jumbotron-title.ex-text-white {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+h4.sam-jumbotron-sub-title.ex-text-dal-white {
+  color: #df314d;
+}
+
+.sam-advanced-search {
+  background: #ffffff;
+  color: #3a1965;
+  margin-top: -160px !important;
+}
+
+.ex-sec-footer {
+  background: #df314d;
+  bottom: 0;
+  margin-top: 100px;
+  width: 100%;
+}
+
+.ex-text-white {
+  color: #ffffff;
+}
+
+.ex-text-dal-white {
+  color: #cccccc;
+}
+
+.sam-sub-heading, .ex-element-sub-title {
+  color: #df314d;
+}
+
+.btn {
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background-image: -webkit-gradient(linear, left top, right top, from(#E94822), to(#C339CE));
+  background-image: linear-gradient(to right, #E94822, #C339CE);
+  background-color: transparent;
+  border: 1px solid #df314d;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:hover {
+  border: 1px solid #df314d;
+  background-image: -webkit-gradient(linear, left top, right top, from(#C339CE), to(#E94822));
+  background-image: linear-gradient(to right, #C339CE, #E94822);
+  color: #ffffff;
+  -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  color: #3a1965;
+}
+
+.form-label {
+  color: #df314d;
+}
+
+.form-control {
+  border-radius: 0%;
+}
+
+.form-select {
+  height: 50px;
+}
+
+/* Page spesific */
+.sam-tab-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: -55px;
+}
+
+.sam-tab-nav .btn {
+  margin-left: 10px;
+}
+
+.sam-gallery > .lg-react-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.sam-gallery > .lg-react-element > div {
+  width: calc(100%/3);
+}
+
+.sam-gallery > .lg-react-element > div img {
+  width: 100%;
+}
+
+body {
+  background: #3a1965;
+  color: #ffffff;
+}
+/*# sourceMappingURL=style.css.map */
