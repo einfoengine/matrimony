@@ -348,6 +348,7 @@ h4.sam-jumbotron-sub-title.ex-text-dal-white {
 
 .sam-gallery > .lg-react-element > div img {
   width: 100%;
+  border-radius: 4px;
 }
 
 body {

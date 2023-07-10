@@ -5,6 +5,7 @@ import UserGallery from '../../../components/UserGallery';
 import ImageUploader from '../../../components/ImageUploader';
 import Default from '../../../Layouts/Default.layout';
 import ProfileBrief from '../../../components/ProfileBrief';
+import Link from 'next/link';
 
 interface GalleryData {
   id: string;
@@ -48,9 +49,22 @@ const Gallery = (): JSX.Element => {
             },
             {
               span: 8,
-              components: (
-                  <UserGallery images={images} gallery_title={""} self={true} className='border rounded p-3'/>
-              ),
+              components: 
+              <div className="sam-bio-wrapper">
+                <div className="sam-tab-nav mb-3">
+                  <Link href={`/biodata?user=${user}`} passHref>
+                    <button className="btn btn-light">Biodata</button>
+                  </Link>
+                  <Link href={`/users/gallery/${user}`} passHref>
+                    <button className="btn btn-info">Gallery</button>
+                  </Link>
+                  <Link href={`/users/gallery/delete`} passHref>
+                    <button className='btn btn-primary'>Delete</button>
+                  </Link>
+                </div>
+                <UserGallery images={images} gallery_title={""} self={true} className='border rounded p-3'/>
+              </div>
+              ,
             },
           ],
         },

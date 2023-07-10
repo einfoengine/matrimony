@@ -26,9 +26,6 @@ const UserImageList = ({gallery_title="gallery", images={}, self=false, classNam
         <div className="row">
           <div className="col-12 d-flex">
             <ImageUploader />
-            <Link href={`/dashboard/gallery/delete`} passHref>
-              <button className='btn btn-primary'>Delete</button>
-            </Link>
           </div>
         </div>
       }

@@ -3,6 +3,9 @@ import axios from 'axios';
 import SideMenu from '../../../components/SideMenu';
 import Default from '../../../Layouts/Default.layout';
 import DeleteImage from '../../../components/DeleteImage';
+import UserGallery from '../../../components/UserGallery';
+import Link from 'next/link'
+import ProfileBrief from '../../../components/ProfileBrief';
 
 interface GalleryData {
   id: string;
@@ -40,15 +43,18 @@ const Gallery = (): JSX.Element => {
         {
           cols: [
             {
-              span: 2,
-              components: <SideMenu active="message" />,
+              span: 4,
+              components: <>{
+                user&&<ProfileBrief user={user}/>
+              }
+              </>
             },
             {
-              span: 10,
+              span: 8,
               components: (
-                <>
-                  <DeleteImage user={user} images={images} gallery_title="Images" self={true}/>
-                </>
+                <div className="sam-bio-wrapper">
+                  <DeleteImage user={user} images={images} gallery_title="" self={true}/>
+                </div>
               ),
             },
           ],

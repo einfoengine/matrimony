@@ -44,9 +44,9 @@ const Gallery = ({ gallery }: { gallery: any}) => {
               components: <div className="sam-bio-wrapper">
                 <div className="sam-tab-nav mb-3">
                   <Link href={`/biodata?user=${user}`} passHref>
-                    <button className="btn btn-info">Biodata</button>
+                    <button className="btn btn-light">Biodata</button>
                   </Link>
-                  <button className="btn btn-light">Gallery</button>
+                  <button className="btn btn-info">Gallery</button>
                   <Link href={`/users/gallery/edit`} passHref>
                     <button className="btn btn-danger">Edit</button>
                   </Link>
