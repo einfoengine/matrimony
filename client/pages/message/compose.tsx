@@ -43,51 +43,49 @@ const ComposeMessage = () => {
   }, [payload])
 
   return (
-    <div className="container m-dev-compose-message m-dev">
-    <div className="row">
+    <section className="sam-section">
       
-      <div className="col-md-2">
-        <SideMenu active={"message"}/>
-      </div>
-      {/* content */}
-      <div className="col-md-10">
+      <div className="container">
         <div className="row">
-            {/* A-1 */}
-          <div className="col-md-9">
-            <div className="message-menu m-dev-element">
-                <ul className="list-group list-group-horizontal">
-                    <li className="list-group-item"><Link href="/message"><a>All</a></Link></li>
-                    <li className="list-group-item"><Link href="/message/inbox"><a>Inbox</a></Link></li>
-                    <li className="list-group-item"><Link href="/message/outbox"><a>Outbox</a></Link></li>
-                    <li className="list-group-item active"><Link href="/message/compose"><a>Compose</a></Link></li>
-                </ul>
-            </div>
-            {/* A-2 */}
-            <div className="m-dev-element">
-                <h3>New Messages</h3>
-                <form onSubmit={handleSubmit}>
-                  <div className="mb-3">
-                    <label className="form-label">User ID</label>
-                    {router.query.receiver!==undefined?
-                      <input type="email" className="form-control" id="exampleFormControlInput1" defaultValue={router.query.receiver} disabled/>
-                      :
-                      <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="example: 12342ce561e683f0a2b10e1234"/>
-                    }
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Example textarea</label>
-                    <textarea className="form-control" id="exampleFormControlTextarea1" rows={3} onChange={changeMessage}></textarea>
-                  </div>
-                  <button key="bio-form-submission" className="row btn btn-primary" type="submit">Submit</button>
-                </form>
-            </div>
+          <div className="col-md-3">
+            <SideMenu active={"message"}/>
           </div>
-          {/* End message position A-1 */}
-          
+          {/* content */}
+          <div className="col-md-9">
+                <div className="message-menu m-dev-element">
+                    <ul className="list-group list-group-horizontal sam-tab-nav mb-3">
+                        <li className="list-group-item"><Link href="/message"><a>All</a></Link></li>
+                        <li className="list-group-item"><Link href="/message/inbox"><a>Inbox</a></Link></li>
+                        <li className="list-group-item"><Link href="/message/outbox"><a>Outbox</a></Link></li>
+                        <li className="list-group-item active"><Link href="/message/compose"><a>Compose</a></Link></li>
+                    </ul>
+                </div>
+                {/* A-2 */}
+                <div className="m-dev-element rounded border p-3">
+                    <h3>New Messages</h3>
+                    <form onSubmit={handleSubmit}>
+                      <div className="mb-3">
+                        <label className="form-label">User ID</label>
+                        {router.query.receiver!==undefined?
+                          <input type="email" className="form-control" id="exampleFormControlInput1" defaultValue={router.query.receiver} disabled/>
+                          :
+                          <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="example: 12342ce561e683f0a2b10e1234"/>
+                        }
+                      </div>
+                      <div className="mb-3">
+                        <label className="form-label">Example textarea</label>
+                        <textarea className="form-control" id="exampleFormControlTextarea1" rows={3} onChange={changeMessage}></textarea>
+                      </div>
+                      <button key="bio-form-submission" className="btn btn-primary" type="submit">Submit</button>
+                    </form>
+                </div>
+              </div>
+              {/* End message position A-1 */}
+              
+            
         </div>
       </div>
-    </div>
-  </div>
+    </section>
   )
 }
 

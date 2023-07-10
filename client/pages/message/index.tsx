@@ -25,14 +25,12 @@ const Message = (props) => {
       <div className="container">
         <div className="row">
             {/* Left */}
-          <div className="col-md-2">
-            <SideMenu/>
+          <div className="col-md-3">
+            <SideMenu active={"message"}/>
           </div>
           {/* content */}
-          <div className="col-md-10">
-            <div className="row">
-                {/* A-1 */}
-              <div className="col-md-9">
+          <div className="col-md-9">
+            
                 <div className="message-menu m-dev-element">
                     <ul className="list-group list-group-horizontal">
                         {/* <li className="list-group-item active"><Link href="/message"><a>All</a></Link></li> */}
@@ -80,9 +78,6 @@ const Message = (props) => {
                 </div>
               </div>
               {/* End message position A-1 */}
-              
-            </div>
-          </div>
         </div>
       </div>
     </section>
