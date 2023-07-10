@@ -2,6 +2,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
+import SideMenu from "../../components/SideMenu";
 
 const ComposeMessage = () => {
   const router = useRouter();
@@ -46,11 +47,7 @@ const ComposeMessage = () => {
     <div className="row">
       
       <div className="col-md-2">
-        <ul className='list-group'>
-          <li className='list-group-item'><Link href="/dashboard"><a>Account</a></Link></li>
-          <li className='list-group-item active'><Link href="/message"><a>Message</a></Link></li>
-          <li className='list-group-item'><Link href=""><a>Choice List</a></Link></li>
-        </ul>
+        <SideMenu active={"message"}/>
       </div>
       {/* content */}
       <div className="col-md-10">

@@ -5,7 +5,7 @@ import RenderUsers from '../../components/RenderUsers';
 import SideMenu from '../../components/SideMenu';
 
 const Dashboard = () => {
-  const [user, setUser] = useState();
+  const [userLiked, setUserLiked] = useState();
   // const [liked, useState] = useState();
     const {state} = useContext(LoginContext);
     const ctx = useContext(LoginContext);
@@ -13,7 +13,7 @@ const Dashboard = () => {
       if(state.user){
         try {
           axios.get('/api/users/liked/', {params: {user: state.user._id}}).then((res)=>{
-            setUser(res.data);
+            setUserLiked(res.data);
           });
         } catch (error) {
           console.log("Dashboard find user rejection - ", error);
@@ -24,21 +24,28 @@ const Dashboard = () => {
       <section className="sam-section">
         <div className="container">
           <div className="row">
-            <div className="col-md-2">
+            <div className="col-md-3">
               <SideMenu active={"message"}/>
             </div>
-            <div className="col-md-10">
+            <div className="col-md-9">
               <div className="row">
                 <div className="col-md-9">
-                  <div className="bd-component">
-                    <div>
-                      {user !== (null || undefined)&&
-                      <RenderUsers users={user} showLike={false} showMessage={true} showBio={false} handleLike={()=>{console.log("No like")}}/>} 
-                    </div>
+                  <div className="border rounded p-3 mb-3">
+                    <h6>Your account is not varified</h6>
                   </div>
+                  {userLiked !== (null || undefined)&&
+                  <RenderUsers users={userLiked} showLike={false} showMessage={true} showBio={false} handleLike={()=>{console.log("No like")}}/>} 
                 </div>
                 <div className="col-md-3">
-                  <h3>New Messages</h3>
+                  <div className="border rounded p-3 mb-3">
+                    <h6>10 people liked you</h6>
+                  </div>
+                  <div className="border rounded p-3 mb-3">
+                    <h6>Contact with admins to find your suitable match</h6>
+                  </div>
+                  <div className="border rounded p-3">
+                    <h6>You have 3 new messages</h6>
+                  </div>
                 </div>
               </div>
             </div>
