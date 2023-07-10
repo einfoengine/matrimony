@@ -31,11 +31,11 @@ const UserImageList = ({gallery_title="gallery", images={}, self=false, classNam
       }
       <div className="sam-gallery">
         <LightGallery speed={500} plugins={[lgThumbnail, lgZoom]}>
-          {images.length>0&&images?.map((image, index) => 
+          {images.length>0?images?.map((image, index) => 
             <div className='sam-gallery-item' href={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/static/gallery/${images&&images[index]}`} key={'user-gallery-' + index}>
               <img src={`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/static/gallery/${images&&images[index]}`} alt={``}/>
             </div>
-          )}
+          ):<h6>The user yet to upload images!</h6>}
         </LightGallery>
       </div>
     </div>

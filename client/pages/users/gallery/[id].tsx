@@ -11,21 +11,21 @@ import UserGallery from "../../../components/UserGallery";
 import ProfileBrief from "../../../components/ProfileBrief";
 
 export async function getServerSideProps(req, res) {
-  // const {data: user} = await axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/api/user/biodata`, {params: {user: req.query.id}});
-  const { data: gallery } = await axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_CLIENT_PORT}/api/users/gallery`, { params: { id: req.query.id } });
-  // const {user} = await axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/api/user/biodata`, {params: {user: req.query.id}});
-  console.log("G-> ",gallery)
-  // console.log("u-> ",user)
+  let { data: gallery } = await axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_CLIENT_PORT}/api/users/gallery`, { params: { id: req.query.id } });
+  if(gallery===null){
+    gallery = {}
+  }
+  console.log(gallery)
   return {
     props: {
-      // user,
+      user: req.query.id,
       gallery
     }
   }
 }
 
-const Gallery = ({ gallery }: { gallery: any}) => {
-  const { images, user } = gallery;
+const Gallery = ({ gallery, user }: { gallery: any, user: string}) => {
+  const { images } = gallery;
   const payload: layoutPayload = [
     {
       id: "ex-registratio",

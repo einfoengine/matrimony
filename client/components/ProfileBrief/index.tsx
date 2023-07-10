@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 
-const ProfileBrief = ({user}:{user:object}) => {
+const ProfileBrief = ({user}:{user:string}) => {
   const [userDetails, setUserDetails] = useState();
   const [profilePic, setProfilePic] = useState();
   const [avatar, setSelectedFile] = useState(null);
