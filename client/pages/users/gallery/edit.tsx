@@ -71,11 +71,9 @@ const Gallery = (): JSX.Element => {
       ],
     },
   ];
-  return (
-    <div className="container vd-top-space">
-      <Default layoutPayload={payload} />
-    </div>
-  );
+  
+  return <Default layoutPayload={payload} />
+  
 };
 
 export default Gallery;

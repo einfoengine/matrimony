@@ -212,7 +212,7 @@ a{
     .sam-column:last-child{
         display: flex;
         margin-left: auto;
-        > div{
+        > div, button{
             margin-left: auto;
             > *{
                 min-width: 30px;

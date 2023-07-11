@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 import SideMenu from "../../components/SideMenu";
+import MessageNav from "../../components/MessageNav";
 
 const ComposeMessage = () => {
   const router = useRouter();
@@ -52,37 +53,28 @@ const ComposeMessage = () => {
           </div>
           {/* content */}
           <div className="col-md-9">
-                <div className="message-menu m-dev-element">
-                    <ul className="list-group list-group-horizontal sam-tab-nav mb-3">
-                        <li className="list-group-item"><Link href="/message"><a>All</a></Link></li>
-                        <li className="list-group-item"><Link href="/message/inbox"><a>Inbox</a></Link></li>
-                        <li className="list-group-item"><Link href="/message/outbox"><a>Outbox</a></Link></li>
-                        <li className="list-group-item active"><Link href="/message/compose"><a>Compose</a></Link></li>
-                    </ul>
-                </div>
-                {/* A-2 */}
-                <div className="m-dev-element rounded border p-3">
-                    <h3>New Messages</h3>
-                    <form onSubmit={handleSubmit}>
-                      <div className="mb-3">
-                        <label className="form-label">User ID</label>
-                        {router.query.receiver!==undefined?
-                          <input type="email" className="form-control" id="exampleFormControlInput1" defaultValue={router.query.receiver} disabled/>
-                          :
-                          <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="example: 12342ce561e683f0a2b10e1234"/>
-                        }
-                      </div>
-                      <div className="mb-3">
-                        <label className="form-label">Example textarea</label>
-                        <textarea className="form-control" id="exampleFormControlTextarea1" rows={3} onChange={changeMessage}></textarea>
-                      </div>
-                      <button key="bio-form-submission" className="btn btn-primary" type="submit">Submit</button>
-                    </form>
-                </div>
-              </div>
-              {/* End message position A-1 */}
-              
-            
+            <MessageNav/>
+            {/* A-2 */}
+            <div className="m-dev-element rounded border p-3">
+                <h3>New Messages</h3>
+                <form onSubmit={handleSubmit}>
+                  <div className="mb-3">
+                    <label className="form-label">User ID</label>
+                    {router.query.receiver!==undefined?
+                      <input type="email" className="form-control" id="exampleFormControlInput1" defaultValue={router.query.receiver} disabled/>
+                      :
+                      <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="example: 12342ce561e683f0a2b10e1234"/>
+                    }
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label">Example textarea</label>
+                    <textarea className="form-control" id="exampleFormControlTextarea1" rows={3} onChange={changeMessage}></textarea>
+                  </div>
+                  <button key="bio-form-submission" className="btn btn-primary" type="submit">Submit</button>
+                </form>
+            </div>
+          </div>
+          {/* End message position A-1 */}
         </div>
       </div>
     </section>
