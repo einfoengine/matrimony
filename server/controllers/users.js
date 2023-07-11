@@ -96,6 +96,14 @@ export const GetLiked = async (req, res) => {
         res.send(err);
     }
 }
+export const GetLikedBy = async (req, res) => {
+    try {
+        const likedBy = await User.find({liked: req.query.user}).exec();
+        res.json(likedBy);
+    } catch (err) {
+        res.send(err);
+    }
+}
 // Get searched
 export const userGetMany = async (req, res) => {
     try {

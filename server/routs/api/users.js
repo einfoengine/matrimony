@@ -14,6 +14,7 @@ import {
     GetUser, 
     SetLike, 
     GetLiked, 
+    GetLikedBy,
     RemoveUser, 
     Uploadavatar, 
     UploadImages, 
@@ -110,6 +111,7 @@ router.get('/user/:id', GetUser);
 router.get('/', GetUsers);
 router.get('/recent', GetRecentUsers);
 router.get('/liked', GetLiked);
+router.get('/likedby', GetLikedBy);
 router.get('/gallery', GetUserGallery);
 
 // Update 

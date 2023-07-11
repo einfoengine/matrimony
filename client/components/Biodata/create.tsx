@@ -125,7 +125,7 @@ const CreateBiodata = ({bio, userId}:{bio: object | null, userId: any}) => {
                     <label htmlFor="floatingTextarea2">Comments</label>
                 </div>
             </div>
-            <button key="bio-form-submission" className="row btn btn-primary" type="submit">Submit</button>
+            <button key="bio-form-submission" className="btn btn-primary" type="submit">Submit</button>
         </form>
     </div>
   )

@@ -20,7 +20,7 @@ const Users = () => {
       users.map((user:object, index:number)=>{
         console.log(user);
         axios.get(`http://${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_SERVER_PORT}/api/user/biodata`, {params: {user: user._id}}).then((res)=>{
-          users[index].about = res.data.about;
+          users[index].about = res?.data?.about;
         })
         .then(()=>{
           setUsers(users);
